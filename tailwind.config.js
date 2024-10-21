@@ -5,7 +5,14 @@ module.exports = {
     "./templates/**/*.html.twig",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'cardo': ['cardo', 'serif'],
+      },
+      backgroundImage: {
+        'characters': "url(/public/images/character_mashup.png)"
+      },
+    },
   },
   plugins: [],
 }
