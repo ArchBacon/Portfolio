@@ -15,18 +15,50 @@
 
             {# Socials #}
             <div class="flex flex-row space-x-6 mx-auto">
-                <i data-feather="linkedin"></i>
-                <i data-feather="github"></i>
-                <i data-feather="mail"></i>
+                <a class="hover:text-amber-500" href="javascript:void(0)"><i data-feather="linkedin"></i></a>
+                <a class="hover:text-amber-500" href="javascript:void(0)"><i data-feather="github"></i></a>
+                <a class="hover:text-amber-500" href="javascript:void(0)"><i data-feather="mail"></i></a>
             </div>
 
             <div class="flex flex-col w-10/12 mx-auto">
                 <p class="text-5xl border-b border-amber-200 mb-4">Featured</p>
 
-                <div>
-                    {{ cards.open() }}
-                    {{ cards.open() }}
-                    {{ cards.open() }}
+                <div class="flex flex-col space-y-4 items-center">
+                    {{ cards.open(
+                        "Outer Wilds",
+                        "Solo Project",
+                        "Outer Wilds is a captivating exploration game that immerses players in a time-looping solar system, inviting them to uncover its secrets and unravel the mysteries that lie within.",
+                        "https://picsum.photos/288/248.webp?outer_wilds",
+                        "Y2019 - Mobius Digital @Annapurna"
+                    ) }}
+                    {{ cards.open(
+                        "Hollow Knight",
+                        "Game Jam project",
+                        "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
+                        "https://picsum.photos/288/248.webp?hollow_knight",
+                        "Y2017 - Team Cherry @Popeach"
+                    ) }}
+                    {{ cards.open(
+                        "Dishonored",
+                        "Freelance Project",
+                        "Dishonored is an immersive first-person action game that casts you as a supernatural assassin driven by revenge. With Dishonored’s flexible combat system, creatively eliminate your targets as you combine the supernatural abilities, weapons and unusual gadgets at your disposal.",
+                        "https://picsum.photos/288/248.webp?dishonored",
+                        "Y2012 - Arkane @Bethesda"
+                    ) }}
+                    {{ cards.open(
+                        "Call of Duty: MW2",
+                        "Team Project",
+                        "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
+                        "https://picsum.photos/288/248.webp?cod_mw2",
+                        "Y2017 - Team Cherry @Popeach"
+                    ) }}
+                    {{ cards.open(
+                        "Joe Biden",
+                        "Elderly Project",
+                        "Joseph Robinette Biden Jr. is an American politician who has been the 46th and current president of the United States since 2021. A member of the Democratic Party, he served as the 47th vice president from 2009 to 2017 under President Barack Obama and represented Delaware in the U.S. Senate from 1973 to 2009.",
+                        "https://picsum.photos/288/248.webp?joe_biden",
+                        "Y2021 - Joe Biden @thewhitehouse"
+                    ) }}
                 </div>
             </div>
         </div>
