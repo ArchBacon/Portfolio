@@ -7,22 +7,21 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'cardo': ['cardo', 'serif'],
+        'birthstone': ['Birthstone', 'cursive'],
+        'raleway': ['Raleway', 'sans-serif'],
+        'addison': ['Addison', 'sans-serif'],
       },
-      backgroundImage: {
-        'characters': "url(/public/images/character_mashup.png)"
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: '100ch', // add required value here
-          },
-        },
+      colors: {
+        'primary-text': '#F5F6F8',
+        'secondary-text': '#941D2A',
+        'primary': '#031212',
+        'secondary': '#DB181C',
       },
     },
+    backgroundImage: {
+      'particles': "url(/public/images/particles.png)"
+    },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }
 

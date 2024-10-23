@@ -1,5 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Raleway";
+    src: url("./fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Birthstone";
+    src: url("./fonts/Birthstone/Birthstone-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Addison";
+    src: url("./fonts/Addison/Addison.otf") format("opentype");
+}
+
+/* TODO: Make this compatible with tailwind */
+.text-stroke {
+    -webkit-text-stroke: 0.5px #F5F6F8;
+}
