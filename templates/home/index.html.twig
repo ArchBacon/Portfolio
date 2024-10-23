@@ -3,36 +3,6 @@
 {% block title %}Portfolio{% endblock %}
 
 {% block body %}
-    <div class="container mx-auto flex flex-col min-h-[calc(100dvh - 12rem)] overflow-hidden">
-        <div class="px-10 text-center"> {# About Me #}
-            <h1 class="text-5xl font-addison text-secondary-text mb-8 mt-16">Hello!</h1>
-            <p class="text-xl">
-                I’m Christian Delicaat, a passionate game development student who
-                has an interest in gameplay, tools, hexagons, and all things procedural.
-            </p>
-        </div>
-        <div class="absolute bottom-0 w-full"> {# Just Me #}
-            <div class="absolute -top-8 w-full mx-auto -z-10">
-                <div class="relative">
-                    <div class="bg-secondary w-72 h-72 rounded-full mx-auto"></div>
-                    <ul class="absolute top-2 z-10 font-addison text-5xl uppercase text-center w-full text-transparent text-stroke">
-                        <li>Tools</li>
-                        <li>Creativity</li>
-                        <li>Procedural</li>
-                        <li>Teamwork</li>
-                        <li>Gameplay</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center absolute bottom-0 w-full mx-auto z-10">
-                <div class="mb-[4.5rem] relative">
-                    <p class="text-secondary-text text-xs uppercase leading-none -mb-2">Let's build amazing games together!</p>
-                    <p class="font-addison text-7xl leading-none">Chris</p>
-                    <p class="z-20 top-1/2 w-full mx-auto font-birthstone text-secondary-text text-6xl leading-none absolute">Dev</p>
-                </div>
-                <p class="text-secondary-text text-xs mb-4">2024 • Christian Delicaat</p>
-            </div>
-            <img class="max-w-96 w-full mx-auto overflow-hidden" src="{{ asset('images/portrait.png') }}" alt="Black and White Portrait Photo">
-        </div>
-    </div>
+    {% include 'home/hero.html.twig' %}
+    {# include 'home/portfolio.html.twig' #}
 {% endblock %}
