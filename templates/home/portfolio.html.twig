@@ -7,7 +7,32 @@
         <div class="h-1/2 border-t border-secondary-text flex-1"></div>
     </div>
 
-    {% for i in 1..3 %}
-        {{ card.placeholder() }}
-    {% endfor %}
+    {{ card.open(
+        "Marisol",
+        "Team Project",
+        "Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.",
+        asset('images/marisol.png'),
+        "Y2024 - Butterfly @BUas"
+    ) }}
+    {{ card.open(
+        "Snopuck",
+        "Team Project",
+        "A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!",
+        asset('images/snopuck.png'),
+        "Y2023 - Butterfly @BUas"
+    ) }}
+    {{ card.open(
+        "Minecraft",
+        "Team Project",
+        "A custom cross-platform Voxel engine where we set out to make a game where the player can explore caves, mines resources, and fight enemies.",
+        asset('images/minecraft.png'),
+        "Y2023 - @BUas"
+    ) }}
+    {{ card.open(
+        "Procedural Planets",
+        "Solo Project",
+        "A procedural planet generator tool. Planets generated in runtime on the CPU.",
+        asset('images/procplanets.png'),
+        "Y2023 - @BUas"
+    ) }}
 </div>
