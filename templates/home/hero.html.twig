@@ -1,3 +1,5 @@
+{% import 'shared/icons.html.twig' as icon %}
+
 <div class="container mx-auto flex flex-col min-h-[calc(100dvh - 12rem)] overflow-hidden">
     <div class="absolute w-64 h-64 -z-10">
         <img class="w-full h-full absolute -top-1/2 -left-1/2" src="{{ asset('images/ripple.png') }}" alt="decorative ripple image">
@@ -40,10 +42,27 @@
             I’m Christian Delicaat, a passionate game development student who
             has an interest in gameplay, tools, hexagons, and all things procedural.
         </p>
-        <div class="flex flex-row justify-evenly mt-8 text-primary">
-            <a href="javascript:void(0)"><i class="hover:text-primary-text" data-feather="github"></i></a>
-            <a href="javascript:void(0)"><i class="hover:text-primary-text" data-feather="mail"></i></a>
-            <a href="javascript:void(0)"><i class="hover:text-primary-text" data-feather="linkedin"></i></a>
+        <div data-controller="tooltip" class="flex w-full items-end justify-evenly py-6">
+            <div data-action="click->tooltip#discord" class="relative w-min group mt-12 flex flex-col justify-center">
+                <div class="z-0 absolute shadow-lg hidden bg-[#333] text-white font-semibold px-3 py-[6px] text-[13px] right-0 left-0 w-max -top-10 rounded before:w-4 before:h-4 before:rotate-45 before:bg-[#333] before:absolute before:-z-10 before:-bottom-1 before:left-0  before:right-0 before:mx-auto">
+                    Copied!
+                </div>
+                {{ icon.DiscordTransparent() }}
+            </div>
+
+            <a href="https://github.com/ArchBacon" target="_blank"
+               class="relative w-min group mt-12 flex flex-col justify-center hover:text-primary-text">
+                {{ icon.GithubTransparent() }}
+            </a>
+
+            <div data-action="click->tooltip#email" class="relative w-min group mt-12 flex flex-col justify-center">
+                <div class="z-0 absolute shadow-lg hidden bg-[#333] text-white font-semibold px-2 py-[6px] text-[13px] right-0 left-0 w-max -top-10 rounded before:w-4 before:h-4 before:rotate-45 before:bg-[#333] before:absolute before:-z-10 before:-bottom-1 before:left-0  before:right-0 before:mx-auto">
+                    Copied!
+                </div>
+                <span class="hover:text-primary-text">
+                    {{ icon.EmailTransparent() }}
+                </span>
+            </div>
         </div>
     </div>
 </div>
