@@ -16,7 +16,7 @@
 {% endmacro %}
 
 {% macro placeholder(animate = false) %}
-    <a href="javascript:void(0)" class="rounded-md h-[28rem] w-72 bg-zinc-800 shadow-inner">
+    <a href="javascript:void(0)" class="rounded-md h-[28rem] max-w-72 w-full bg-zinc-800 shadow-inner mx-auto">
         <div class="w-full {% if animate != false %}animate-pulse{% endif %}">
             <div class="w-full h-[12rem] bg-zinc-700 rounded-t-md"></div>
             <div class="text-left p-4 pb-0 w-full flex-1">

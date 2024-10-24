@@ -1,0 +1,13 @@
+{% import 'shared/cards.html.twig' as card %}
+
+<div class="container mx-auto grid grid-cols-1 p-12 pt-8 gap-8">
+    <div class="flex flex-row w-full items-end">
+        <div class="h-1/2 border-t border-secondary-text flex-1"></div>
+        <p class="p-4 font-birthstone text-6xl text-secondary-text">Portfolio</p>
+        <div class="h-1/2 border-t border-secondary-text flex-1"></div>
+    </div>
+
+    {% for i in 1..3 %}
+        {{ card.placeholder() }}
+    {% endfor %}
+</div>
