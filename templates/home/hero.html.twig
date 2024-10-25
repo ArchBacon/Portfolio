@@ -7,42 +7,55 @@
     <div class="absolute w-64 h-64 -z-10">
         <img class="w-full h-full absolute -top-1/2 -left-1/2" src="{{ asset('images/ripple.png') }}" alt="decorative ripple image">
     </div>
-    <div class="relative mt-28 w-full"> {# Just Me #}
-        <div class="absolute -top-8 w-full mx-auto -z-10">
-            <div class="relative">
-                <div class="bg-secondary w-72 h-72 rounded-full mx-auto"></div>
-                <ul class="absolute top-2 z-10 font-addison text-5xl uppercase text-center w-full text-transparent text-stroke">
-                    <li>Tools</li>
-                    <li>Creativity</li>
-                    <li>Procedural</li>
-                    <li>Teamwork</li>
-                    <li>Gameplay</li>
-                </ul>
-            </div>
+
+    <div class="md:grid md:grid-cols-2 lg:gap-48 md:px-4 md:mx-auto justify-between">
+        <div class="hidden md:flex mt-16 text-center flex-col justify-center">
+            <h1 class="text-5xl font-addison mb-8 text-secondary-text">Hello!</h1>
+            <p class="text-xl max-w-sm">
+                I’m Christian Delicaat, a passionate game development student who
+                has an interest in gameplay, tools, hexagons, and all things procedural.
+            </p>
         </div>
-        <div class="text-center absolute bottom-0 w-full mx-auto z-10">
-            <div class="mb-20 relative">
-                <p class="text-secondary-text text-xs font-bold uppercase leading-none -mb-2">Let's build amazing games together!</p>
-                <p class="font-addison text-7xl leading-none">Chris</p>
-                <p class="z-20 top-1/2 w-full mx-auto font-birthstone text-secondary-text text-6xl leading-none absolute">Dev</p>
+        <div class="relative mt-28 w-full"> {# Just Me #}
+            <div class="absolute -top-8 w-full mx-auto -z-10">
+                <div class="relative">
+                    <div class="bg-secondary w-72 h-72 rounded-full mx-auto"></div>
+                    <ul class="absolute top-2 z-10 font-addison text-5xl uppercase text-center w-full text-transparent text-stroke">
+                        <li>Tools</li>
+                        <li>Creativity</li>
+                        <li>Procedural</li>
+                        <li>Teamwork</li>
+                        <li>Gameplay</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="relative w-full md:w-fit overflow-hidden md:mx-auto">
-            <img class="-z-20 w-64 h-64 absolute -right-12 md:right-0 top-44" src="{{ asset('images/ripple.png') }}" alt="decorative ripple image">
-            <img class="max-w-96 w-full mx-auto" src="{{ asset('images/portrait.png') }}" alt="Black and White Portrait Photo">
+            <div class="text-center absolute bottom-0 w-full mx-auto z-10">
+                <div class="mb-20 relative">
+                    <p class="text-secondary-text text-xs font-bold uppercase leading-none -mb-2">Let's build amazing games together!</p>
+                    <p class="font-addison text-7xl leading-none">Chris</p>
+                    <p class="z-20 top-1/2 w-full mx-auto font-birthstone text-secondary-text text-6xl leading-none absolute">Dev</p>
+                </div>
+            </div>
+            <div class="relative w-full md:w-fit overflow-hidden md:mx-auto">
+                <img class="-z-20 w-64 h-64 absolute -right-12 md:right-0 top-44" src="{{ asset('images/ripple.png') }}" alt="decorative ripple image">
+                <img class="max-w-96 w-full mx-auto" src="{{ asset('images/portrait.png') }}" alt="Black and White Portrait Photo">
+            </div>
         </div>
     </div>
-    <div class="px-10 py-10 text-center bg-secondary-text">
-        <div class="relative">
-            <span id="about-me" class="absolute -top-16"></span>
-        </div>
-        <h1 class="text-5xl font-addison text-primary mb-8">Hello!</h1>
-        <p class="text-xl">
+</div>
+
+<div class="px-10 py-10 text-center bg-secondary-text">
+    <div class="relative">
+        <span id="about-me" class="absolute -top-16"></span>
+    </div>
+    <div class="max-w-sm mx-auto">
+        <h1 class="md:hidden text-5xl font-addison text-primary mb-8">Hello!</h1>
+        <p class="md:hidden text-xl">
             I’m Christian Delicaat, a passionate game development student who
             has an interest in gameplay, tools, hexagons, and all things procedural.
         </p>
         <div data-controller="tooltip" class="flex w-full items-end justify-evenly">
-            <div data-action="click->tooltip#discord" class="relative w-min group mt-12 flex flex-col justify-center">
+            <div data-action="click->tooltip#discord" class="relative w-min group mt-12 md:mt-0 flex flex-col justify-center">
                 <div class="z-0 absolute shadow-lg hidden bg-[#333] text-white font-semibold px-3 py-[6px] text-[13px] right-0 left-0 w-max -top-10 rounded before:w-4 before:h-4 before:rotate-45 before:bg-[#333] before:absolute before:-z-10 before:-bottom-1 before:left-0  before:right-0 before:mx-auto">
                     Copied!
                 </div>
@@ -50,15 +63,15 @@
             </div>
 
             <a href="https://github.com/ArchBacon" target="_blank"
-               class="relative w-min group mt-12 flex flex-col justify-center hover:text-primary-text">
+               class="relative w-min group mt-12 md:mt-0 flex flex-col justify-center hover:text-primary-text">
                 {{ icon.GithubTransparent() }}
             </a>
 
-            <div data-action="click->tooltip#email" class="relative w-min group mt-12 flex flex-col justify-center">
+            <div data-action="click->tooltip#email" class="relative w-min group mt-12 md:mt-0 flex flex-col justify-center">
                 <div class="z-0 absolute shadow-lg hidden bg-[#333] text-white font-semibold px-2 py-[6px] text-[13px] right-0 left-0 w-max -top-10 rounded before:w-4 before:h-4 before:rotate-45 before:bg-[#333] before:absolute before:-z-10 before:-bottom-1 before:left-0  before:right-0 before:mx-auto">
                     Copied!
                 </div>
-                <span class="hover:text-primary-text">
+                <span class="hover:text-primary-text md:h-6">
                     {{ icon.EmailTransparent() }}
                 </span>
             </div>
