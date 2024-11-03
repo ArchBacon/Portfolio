@@ -1,48 +1,49 @@
 {% import 'shared/cards.html.twig' as card %}
 
-<div class="container mx-auto flex flex-col p-12 pt-0 relative justify-center items-center">
-    <div class="relative">
-        <span id="portfolio" class="absolute -top-16"></span>
-    </div>
-    <div class="flex flex-row my-4 w-full max-w-screen-sm items-center">
-        <div class="h-1/2 border-t border-secondary-text flex-1"></div>
-        <p class="p-4 font-birthstone text-6xl text-secondary-text">Portfolio</p>
-        <div class="h-1/2 border-t border-secondary-text flex-1"></div>
-    </div>
+<div class="w-full mx-auto bg-primary">
+    <div class="container mx-auto flex flex-col p-12 pt-0 relative justify-center items-center">
+        <div class="relative">
+            <span id="portfolio" class="absolute -top-16"></span>
+        </div>
+        <div class="flex flex-row my-4 w-full max-w-screen-sm items-center">
+            <div class="h-1/2 border-t border-secondary-text flex-1"></div>
+            <p class="p-4 font-birthstone text-6xl text-secondary-text">Portfolio</p>
+            <div class="h-1/2 border-t border-secondary-text flex-1"></div>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {{ card.open(
-            "Marisol",
-            "Team Project",
-            "Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.",
-            asset('images/marisol.png'),
-            "Y2024 - Team4 @BUas",
-            path('app_project_marisol'),
-        ) }}
-        {{ card.open(
-            "Snopuck",
-            "Team Project",
-            "A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!",
-            asset('images/snopuck.png'),
-            "Y2023 - Butterfly @BUas",
-            path('app_project_snopuck'),
-        ) }}
-        {{ card.open(
-            "Voxel Engine",
-            "Team Project",
-            "A custom cross-platform Voxel engine where we set out to make a game where the player can explore caves, mines resources, and fight enemies.",
-            asset('images/voxelengine.png'),
-            "Y2023 - @BUas",
-            path('app_project_voxel_engine'),
-        ) }}
-        {{ card.open(
-            "Procedural Planets",
-            "Solo Project",
-            "A procedural planet generation tool. Planets are generated in runtime on the CPU.",
-            asset('images/procplanets.png'),
-            "Y2023 - @BUas",
-            path('app_project_procedural_planets'),
-        ) }}
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {{ card.open(
+                "Marisol",
+                "Team Project",
+                "Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.",
+                asset('projects/marisol/thumbnail_marisol.png'),
+                "Y2024 - Team4 @BUas",
+                path('app_project_marisol'),
+            ) }}
+            {{ card.open(
+                "Snopuck",
+                "Team Project",
+                "A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!",
+                asset('images/snopuck.png'),
+                "Y2023 - Butterfly @BUas",
+                path('app_project_snopuck'),
+            ) }}
+            {{ card.open(
+                "Voxel Engine",
+                "Team Project",
+                "A custom cross-platform Voxel engine where we set out to make a game where the player can explore caves, mines resources, and fight enemies.",
+                asset('images/voxelengine.png'),
+                "Y2023 - @BUas",
+                path('app_project_voxel_engine'),
+            ) }}
+            {{ card.open(
+                "Procedural Planets",
+                "Solo Project",
+                "A procedural planet generation tool. Planets are generated in runtime on the CPU.",
+                asset('images/procplanets.png'),
+                "Y2023 - @BUas",
+                path('app_project_procedural_planets'),
+            ) }}
+        </div>
     </div>
 </div>

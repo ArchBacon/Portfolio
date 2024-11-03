@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="w-full bg-primary min-h-[calc(100vh-6.5rem)]">
+        <div class="container max-w-3xl mx-auto px-5">
+            <h1 class="pt-5 text-3xl font-addison text-center">{% block title %}Project Name{% endblock %}</h1>
+            <div class="py-5">
+                {% block video %}{% endblock %}
+            </div>
+            <div class="pb-5">
+                {% block content %}Content Body{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% macro heading(value) %}
+    <h2 class="text-xl font-bold pb-4">{{ value }}</h2>
+{% endmacro %}
+
+{% macro paragraph(value) %}
+    <p class="pb-8">
+        {{ value|raw }}
+    </p>
+{% endmacro %}
+
+{% macro image(source, description) %}
+    <div class="pb-4">
+        <img class="w-full" src="{{ source }}" alt="">
+        <p class="italic text-zinc-500">{{ description }}</p>
+    </div>
+{% endmacro %}

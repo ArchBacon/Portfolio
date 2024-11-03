@@ -1,10 +1,77 @@
-{% extends 'base.html.twig' %}
+{% extends 'project/project.html.twig' %}
 
 {% block title %}Marisol{% endblock %}
 
-{% block body %}
-    <div class="min-h-[calc(100vh-6.5rem)] mx-auto w-full py-16 flex flex-col space-y-4">
-        <h1 class="text-3xl font-addison text-center">Marisol</h1>
-        <img class="max-w-96" src="{{ asset('images/marisol.png') }}" alt="">
+{% block video %}
+    <iframe class="w-full bg-zinc-900 aspect-video max-w-full"
+            src="https://www.youtube.com/embed/Al4l8_RPOVA?si=EWLtGw213kBuxuao"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+    ></iframe>
+{% endblock %}
+
+{% block content %}
+    <div class="flex flex-wrap gap-4 mb-4">
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Unreal Engine</div>
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Team Project</div>
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Lead Programmer</div>
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Generalist</div>
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Visual Scripting</div>
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Gameplay Tools</div>
+        <div class="bg-secondary-text w-max px-3 py-1 rounded">Procedural Animation</div>
+    </div>
+
+    {{ _self.paragraph("
+        <i>Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure,
+            enemies will try to hold you back, and there will be puzzles that require solving.</i>
+    ") }}
+
+    {{ _self.heading('The Project') }}
+    {{ _self.paragraph("
+        15 artists had spend 8 weeks on creating an environment with characters, effects, and buildings. In the following
+        8 weeks, 3 designers and 5 programmers were added to the project with the goal of turning the art project into a
+        fully functional game.
+    ") }}
+
+    <p>
+        As a lead programmer, I had multiple responsibilities. Most of the responsibilities are summed up as being in a
+        lot more meetings, refining the vision for the game, communicating with the producer and other leads what is,
+        and is not possible for programmers to accomplish in the timeframe we have, and to make sure that the programmers
+        are all on the same line when it comes to the game's vision. I always made sure people had the information they
+        needed to continue their work, direct artists and designers to the right programmer of they needed something
+        done. Additionally, I tried to make sure that the project's directory structure and architecture stay consistent
+        to the style guide I provided for the team.
+
+        style guide good, lotsa communication and meetings.
+    </p>
+
+    {{ _self.heading('Responsibilities') }}
+    {{ _self.paragraph("
+        As a lead peogrammer, I
+    ") }}
+
+    {{ _self.heading('Puzzles | Gameplay Tools') }}
+    {{ _self.paragraph("
+        Cozmo, a gifted little guy with a mind of his own. He’s a real-life robot like you’ve only seen in movies, with a one-of-a-kind personality that evolves the more you hang out.
+Cozmo combines robotics, gaming, and toys. I contributed to the basestation code that runs on a smartphone which connects to the robot firmware via wifi.
+One of the hottest toys of Christmas 2016, Sold out in it’s initial run.
+    ") }}
+
+    {{ _self.heading('Procedural Animation') }}
+    {{ _self.paragraph("
+        Cozmo, a gifted little guy with a mind of his own. He’s a real-life robot like you’ve only seen in movies, with a one-of-a-kind personality that evolves the more you hang out.
+Cozmo combines robotics, gaming, and toys. I contributed to the basestation code that runs on a smartphone which connects to the robot firmware via wifi.
+One of the hottest toys of Christmas 2016, Sold out in it’s initial run.
+    ") }}
+
+    <div class="flex flex-wrap gap-4 mb-8 justify-evenly">
+        <img class="h-16" src="{{ asset('images/buas.png') }}" alt="Unreal Engine Logo">
+        <img class="h-16" src="{{ asset('images/unreal.png') }}" alt="Unreal Engine Logo">
+        <img class="h-16" src="{{ asset('images/jira.png') }}" alt="Unreal Engine Logo">
+        <img class="h-16" src="{{ asset('images/itchio.png') }}" alt="Unreal Engine Logo">
     </div>
 {% endblock %}
+
