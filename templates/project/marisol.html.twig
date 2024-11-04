@@ -66,7 +66,7 @@
         the crab moved, it would always look correct and move only when needed. If one leg was too far in front, move it to
         the back and vice versa.
     ") }}
-    {{ _self.image(asset('projects/marisol/crab_leg_range.png'), 'Graph of the range the legs can move in') }}
+    {{ _self.image(asset('projects/marisol/crab_leg_range.png'), 'Range the legs can move in, in Unreal units') }}
     {{ _self.paragraph("
         With the procedural animation working as intended, it was time to start blending the procedural animation with the
         hand-made animations the artist had worked on. The artist animated multiple idle and attack animations, which would make the
@@ -74,7 +74,7 @@
     ") }}
     {{ _self.image(asset('projects/marisol/crab_animated.gif'), 'Legs fully animated when moving and rotating') }}
 
-    <div class="flex md:flex-row flex-col gap-x-4">
+    <div class="flex sm:flex-row flex-col gap-x-4">
     {{ _self.image(asset('projects/marisol/enemy_animation.webp'), 'Enemy moving using the procedural animation') }}
     {{ _self.image(asset('projects/marisol/crabosaurus.webp'), '"Little" easter egg that often got a reaction out of the players') }}
     </div>
