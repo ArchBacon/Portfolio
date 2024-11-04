@@ -14,10 +14,6 @@
 {% endblock %}
 
 {% block content %}
-    [INSERT ITCH IO LINK]
-    <br>
-    <br>
-
     <div class="flex flex-wrap gap-4 mb-4">
         <div class="bg-secondary-text w-max px-3 py-1 rounded">Unreal Engine</div>
         <div class="bg-secondary-text w-max px-3 py-1 rounded">Team Project</div>
@@ -28,27 +24,22 @@
         <div class="bg-secondary-text w-max px-3 py-1 rounded">Procedural Animation</div>
     </div>
 
-    {{ _self.paragraph("
-        <i>Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure,
-            enemies will try to hold you back, and there will be puzzles that require solving.</i>
-    ") }}
-
     {{ _self.heading('The Project') }}
     {{ _self.paragraph("
-        15 artists had spend 8 weeks on creating an environment with characters, effects, and buildings. In the following
-        8 weeks, 3 designers and 5 programmers were added to the project with the goal of turning the art project into a
-        fully functional game.
+        <a class=\"text-secondary hover:underline\" href=\"https://buas.itch.io/marisol\">Marisol</a> is a game made in
+        8 weeks by 23 students unfamiliar with each other. Players explore the world by interacting with its local
+        residents, defeating enemies, and solving puzzles.
     ") }}
 
     {{ _self.heading('Responsibilities') }}
     {{ _self.paragraph("
-        As a lead programmer, I had multiple responsibilities. Most of the responsibilities are summed up as being in a
-        lot more meetings, refining the vision for the game, communicating with the producer and other leads what is,
-        and is not possible for programmers to accomplish in the timeframe we have, and to make sure that the programmers
-        are all on the same line when it comes to the game's vision. I always made sure people had the information they
-        needed to continue their work, direct artists and designers to the right programmer of they needed something
-        done. Additionally, I tried to make sure that the project's directory structure and architecture stay consistent
-        to the style guide I provided for the team.
+        As the lead programmer for this project, I had many miscellaneous tasks and responsibilities. Some highlights
+        include writing a project style-guide for the entire team, delegating tasks, and getting developers to agree on
+        the project's direction.
+    ") }}
+    {{ _self.paragraph("
+        During meetings with the leads and producer, it was always appreciated that I could explain goals and
+        limitations in a non-technical way and give proper estimates on discussed goals.
     ") }}
 
     {{ _self.heading('Puzzles | Gameplay Tools') }}
@@ -64,6 +55,8 @@ One of the hottest toys of Christmas 2016, Sold out in it’s initial run.
 Cozmo combines robotics, gaming, and toys. I contributed to the basestation code that runs on a smartphone which connects to the robot firmware via wifi.
 One of the hottest toys of Christmas 2016, Sold out in it’s initial run.
     ") }}
+
+    {{ _self.image(asset('projects/marisol/crabosaurus-ezgif.com-resize.webp'), '"Little" easter egg that often got a reaction out of the players') }}
 
     <div class="flex flex-wrap gap-4 mb-8 justify-evenly">
         <img class="h-16" src="{{ asset('images/buas.png') }}" alt="Unreal Engine Logo">
