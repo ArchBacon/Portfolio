@@ -26,7 +26,7 @@
 
 {% macro image(source, description) %}
     <div class="pb-4">
-        <img class="w-full" src="{{ source }}" alt="">
+        <img class="w-full rounded" src="{{ source }}" alt="" loading="lazy">
         <p class="italic text-zinc-500">{{ description }}</p>
     </div>
 {% endmacro %}
