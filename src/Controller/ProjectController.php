@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class ProjectController extends AbstractController
 {
     #[Route('/project', name: 'app_project')]
+    #[Route('/projects', name: 'app_projects')]
     public function index(): Response
     {
         return $this->redirectToRoute('app_home');
@@ -30,10 +31,5 @@ class ProjectController extends AbstractController
     public function snopuck(): Response
     {
         return $this->render('project/snopuck.html.twig');
-    }
-    #[Route('/project/voxel-engine', name: 'app_project_voxel_engine')]
-    public function voxelEngine(): Response
-    {
-        return $this->render('project/voxel_engine.html.twig');
     }
 }

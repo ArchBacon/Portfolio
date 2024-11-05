@@ -34,43 +34,74 @@
     {{ _self.paragraph("
         As the lead programmer for this project, I had many miscellaneous tasks and responsibilities. Some highlights
         include writing a project style-guide for the entire team, delegating tasks, and getting developers to agree on
-        the project's direction. During meetings with the leads and producer, it was always appreciated that I could explain goals and
-        limitations in a non-technical way and give proper estimates on discussed goals.
+        the project's direction. During meetings with the leads and producer, it was always appreciated that I could
+        explain goals and limitations in a non-technical way and give proper estimates on discussed goals.
     ") }}
 
     {{ _self.heading('Puzzles | Gameplay Tools') }}
     {{ _self.paragraph("
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ante sollicitudin, auctor leo feugiat, dapibus
-        lacus. Morbi consequat vel ligula ut efficitur. In hac habitasse platea dictumst. Ut vel leo non tellus venenatis
-        vestibulum. Etiam id auctor ipsum. Vestibulum quis arcu purus. Nunc pretium, ante eget condimentum hendrerit,
-        tellus felis vestibulum leo, feugiat ultrices ligula eros eu sem. Morbi vehicula felis vel leo sagittis posuere.
-        Integer sed consectetur nibh, bibendum accumsan nulla.
+        We quickly knew that we wanted puzzles in our game, so I set out to create a system that the designers could use
+        to create more puzzles without the help of programmers. I tested some simple concepts, such as opening a door
+        with the right levers pulled and closing the door after the player walked past it. I quickly found some
+        limitations with what I had built and expanded it before sending it to the designers for testing with proper
+        documentation on the systems.
     ") }}
+    {{ _self.paragraph("
+        I ended up with a system comprising three components: puzzle parts, Validators, and Actions. Puzzle parts, such
+        as doors, levers, and lights, are generally visible in the game. These parts have a boolean state to set them;
+        depending on the context, it could mean that a door is \"open\" or \"closed\".
+    ") }}
+    {{ _self.paragraph("
+        Validators are used to check the state of one or more puzzle parts and trigger events on other parts. Validators
+        can be configured to change behavior to fit the needs of the puzzle the designers are trying to create. Finally,
+        we have the Action component. The action component is the simplest of the three and is only used to set parts to
+        a specific state. This is useful if things only need to happen once or to reset a puzzle to its original state.
+        Each component also has its own icon to differentiate it from all the other actors in the world.
+    ") }}
+    <div class="flex flex-row gap-x-4 justify-evenly text-center">
+        <div class="w-24">{{ _self.image(asset('projects/marisol/puzzle_part.png'), 'Part') }}</div>
+        <div class="w-24">{{ _self.image(asset('projects/marisol/puzzle_validator.png'), 'Validator') }}</div>
+        <div class="w-24">{{ _self.image(asset('projects/marisol/puzzle_action.png'), 'Action') }}</div>
+    </div>
+    {{ _self.paragraph("
+        One of the artists designed a tower with the final puzzle inside. This is the largest puzzle implemented in the
+        game and can be difficult to solve if not carefully explored. The pressure plates on the ground trigger the
+        adjacent staircase to rise so the player can find their way up to the tower to confront the antagonist. The
+        puzzle in the tower is based on a light puzzle where all tiles need to glow for it to be complete, but
+        triggering one tile also triggers all its adjacent tiles.
+    ") }}
+    {{ _self.image(asset('projects/marisol/early_puzzle_implementation.webp'), 'Light puzzle inside the tower') }}
+    {{ _self.image(asset('projects/marisol/puzzle_tower.png'), 'Light puzzle inside the tower') }}
+    <div class="flex sm:flex-row flex-col gap-x-4">
+        {{ _self.image(asset('projects/marisol/tower_puzzle_showcase.webp'), 'Standing on a pressure plates triggers parts of the puzzle') }}
+        {{ _self.image(asset('projects/marisol/designer_puzzles.webp'), 'Puzzles made by designers using my puzzle system/components') }}
+    </div>
 
     {{ _self.heading('Procedural Animation') }}
     {{ _self.paragraph("
         During the project, we intended to use quite a lot of animations, but it would take too much time for the two
         animators on our team to create all of them. With 3 weeks left on the project, I volunteered to start working on
-        procedural movement animations. With absolutely zero experience in animation or procedural animation, it would be
-        a challenge to learn and implement it in the game in such a short time.
+        procedural movement animations. With absolutely zero experience in animation or procedural animation, it would
+        be a challenge to learn and implement it in the game in such a short time.
     ") }}
     {{ _self.paragraph("
-        After researching and seeing how other people online created procedural animations in Unreal Engine's Control Rig
-        Editor, I started working on my version based on one of the resources found online. In their version of the control
-        rig, the legs of their spider model would reset to their reference position based on a timer. This worked great if
-        the spider was always moving at a slow and constant speed, but if the enemy were to move a bit faster, the legs
-        would drag after the crab model we had.
+        After researching and seeing how other people online created procedural animations in Unreal Engine's Control
+        Rig Editor, I started working on my version based on one of the resources found online. In their version of the
+        control rig, the legs of their spider model would reset to their reference position based on a timer. This
+        worked great if the spider was always moving at a slow and constant speed, but if the enemy were to move a bit
+        faster, the legs would drag after the crab model we had.
     ") }}
     {{ _self.paragraph("
-        My solution was to create a system in which the legs moved within a predetermined range so that no matter how fast
-        the crab moved, it would always look correct and move only when needed. If one leg was too far in front, move it to
-        the back and vice versa.
+        My solution was to create a system in which the legs moved within a predetermined range so that no matter how
+        fast the crab moved, it would always look correct and move only when needed. If one leg was too far in front,
+        move it to the back and vice versa.
     ") }}
     {{ _self.image(asset('projects/marisol/crab_leg_range.png'), 'Range the legs can move in, in Unreal units') }}
     {{ _self.paragraph("
-        With the procedural animation working as intended, it was time to start blending the procedural animation with the
-        hand-made animations the artist had worked on. The artist animated multiple idle and attack animations, which would make the
-        crab feel a lot more alive, while the procedural animation would always look proper, no matter the terrain it would walk on.
+        With the procedural animation working as intended, it was time to start blending the procedural animation with
+        the hand-made animations the artist had worked on. The artist animated multiple idle and attack animations,
+        which would make the crab feel a lot more alive, while the procedural animation would always look proper, no
+        matter the terrain it would walk on.
     ") }}
     {{ _self.image(asset('projects/marisol/crab_animated.gif'), 'Legs fully animated when moving and rotating') }}
 
