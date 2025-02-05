@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="w-full bg-primary min-h-[calc(100vh-6.5rem)]">
-        <div class="container max-w-3xl mx-auto px-5">
-            <h1 class="pt-5 text-3xl font-addison text-center">{% block title %}Project Name{% endblock %}</h1>
+    <div class="w-full bg-primary">
+        <div class="container max-w-3xl mx-auto px-5 mt-6">
+            <h1 class="font-roboto-condensed uppercase font-bold text-6xl tracking-tighter">{% block title %}Project Name{% endblock %}</h1>
+            <hr class="w-20 bg-primary-text h-1.5 my-6">
             <div class="py-5">
                 {% block video %}{% endblock %}
             </div>

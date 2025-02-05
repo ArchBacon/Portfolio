@@ -6,20 +6,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
       fontFamily: {
-        'birthstone': ['Birthstone', 'cursive'],
-        'raleway': ['Raleway', 'sans-serif'],
-        'addison': ['Addison', 'sans-serif'],
+        'roboto-condensed': ['Roboto Condensed', 'sand-serif'],
+        'rajdhani': ['Rajdhani', 'sans-serif'],
       },
       colors: {
-        'primary-text': '#F5F6F8',
-        'secondary-text': '#941D2A',
-        'primary': '#031212',
-        'secondary': '#DB181C',
+        'primary-text': '#ffffff',
+        'primary': '#111',
+        'secondary': '#1a1a1a',
+        'tertiary': '#fdc500',
       },
-    },
-    backgroundImage: {
-      'particles': "url(/public/images/particles.png)"
     },
   },
   plugins: [],

@@ -1,0 +1,89 @@
+<div class="p-14 lg:p- grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
+    {{ _self.project(
+        false,
+        'Marisol',
+        'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
+        'Lead Programmer, Multidisciplinary, Unreal Engine, Visual Scripting, Student',
+        path('app_project_marisol'),
+        asset('projects/marisol/thumbnail_02_387x290.png'),
+        asset('projects/marisol/thumbnail_03_387x290.png'),
+        asset('projects/marisol/thumbnail_01_174x174.png'),
+    ) }}
+    {{ _self.project(
+        true,
+        'Snopuck',
+        'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
+        'Lead Programmer, Multidisciplinary, Unreal Engine, Visual Scripting, Student',
+        path('app_project_snopuck'),
+        asset('images/snopuck.png'),
+        'https://picsum.photos/394/295.webp',
+        'https://picsum.photos/190/190.webp'
+    ) }}
+    {{ _self.project(
+        false,
+        'Procedural Planets',
+        'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
+        'C++, Solo, Student',
+        path('app_project_procedural_planets'),
+        asset('images/procplanets.png'),
+        'https://picsum.photos/394/295.webp',
+        'https://picsum.photos/190/190.webp'
+    ) }}
+    {{ _self.project(
+        true,
+        'Hex Game Jam',
+        'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
+        'Solo, XS, wren.io, Student',
+        path('app_project_marisol'),
+        'https://picsum.photos/603/452.webp',
+        'https://picsum.photos/394/295.webp',
+        'https://picsum.photos/190/190.webp'
+    ) }}
+</div>
+
+{% macro project(
+    align_right = false,
+    title = 'Project tile',
+    description = 'short description',
+    tags = '',
+    route = 'javascript:void(0)',
+    image1 = 'https://picsum.photos/603/452.webp',
+    image2 = 'https://picsum.photos/394/295.webp',
+    image3 = 'https://picsum.photos/190/190.webp'
+) %}
+    <div class="mb-10 lg:min-h-[30rem] flex flex-col lg:flex-row {% if align_right %}lg:flex-row-reverse{% endif %} gap-x-14 gap-y-20 sm:gap-y-28 md:gap-y-64 lg:gap-y-72">
+        <div class="lg:w-[52%] relative">
+            <div class="flex flex-row justify-center items-center">
+                <div class="relative">
+                    <img src="{{ image1 }}" class="w-36 aspect-4/3 sm:w-52 md:w-[30.938rem] lg:w-[24.313rem] border border-secondary z-0" alt="">
+                    <img src="{{ image2 }}" class="w-24 aspect-4/3 sm:w-32 md:w-[24.625rem] lg:w-[24.625rem] absolute right-32 sm:right-48 lg:right-[20%] top-3/4 md:top-2/3 border border-secondary -z-10" alt="">
+                    <img src="{{ image3 }}" class="w-28 aspect-square sm:w-36 md:w-[11.875rem] lg:w-[11.000rem] absolute left-28 sm:left-36 md:left-2/3 lg:left-[60%] top-1/2 sm:top-2/3 md:top-[105%] lg:top-[80%] border border-secondary z-10" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="lg:w-[48%]">
+            <div class="{% if align_right %}grid lg:justify-items-start{% endif %}">
+                <h2 class="font-rajdhani uppercase font-bold text-6xl tracking-tighter">{{ title }}</h2>
+                <hr class="w-20 bg-primary-text h-1.5 my-6">
+            </div>
+            <p class="text-xl font-light tracking-tight">{{ description }}</p>
+            {% set tags = tags|split(',') %}
+            {% if tags[0] != '' %}
+                <div class="flex flex-wrap my-4 gap-2 text-[0.625rem]">
+                    {% for tag in tags %}
+                        <span class="bg-secondary px-2.5 py-0.5 rounded text-tertiary">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {{ _self.button('View project', route) }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro button(content, route = 'javascript:void(0)') %}
+    <a href="{{ route }}">
+        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-14 mt-12 w-max font-bold text-lg tracking-wide transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+            View Project
+        </div>
+    </a>
+{% endmacro %}

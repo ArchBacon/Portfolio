@@ -9,5 +9,10 @@ import './bootstrap.js';
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-import feather from 'feather-icons';
-feather.replace();
+/*
+* Lucide icons are imported here: assets/controllers/icon_controller.js
+*
+* This file is only loaded at initial load and not after, this causes the icons
+* on the page to only be visible on initial load and not after any other page load
+* or void url (javascript:void(0))
+*/

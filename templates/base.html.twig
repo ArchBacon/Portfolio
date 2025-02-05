@@ -2,14 +2,19 @@
 <html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{% block title %}Welcome!{% endblock %} | It's Chris</title>
-        <link rel="icon" type="image/png" href="{{ asset('favicon-48x48.png') }}" sizes="48x48" />
-        <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}" />
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}" />
-        <link rel="manifest" href="{{ asset('site.webmanifest') }}" />
+        <meta name="description" content="Page description."/>
+        <meta name="author" content="auteursnaam"/>
+        <meta name="copyright" content="auteursrechthebbende"/>
+        <meta name="robots" content="index"/>
+        <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96"/>
+        <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}"/>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}"/>
+        <meta name="apple-mobile-web-app-title" content="ItsChris" />
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}"/>
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -19,8 +24,13 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body class="bg-particles text-primary-text font-raleway bg-repeat bg-contain">
+    <body data-controller="icon" class="bg-primary text-primary-text font-roboto-condensed">
         {% include 'shared/header.html.twig' %}
+        <a href="#home">
+            <div class="fixed bottom-6 right-6 border border-tertiary bg-primary/[.95] w-12 h-12 flex justify-center items-center z-20">
+                <i class="text-tertiary h-4 w-4" data-lucide="triangle"></i>
+            </div>
+        </a>
         {% block body %}{% endblock %}
         {% include 'shared/footer.html.twig' %}
     </body>
