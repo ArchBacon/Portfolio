@@ -1,79 +1,34 @@
 {% import 'shared/icons.html.twig' as icon %}
 
-<div class="flex flex-col min-h-[calc(100dvh - 12rem)] overflow-hidden">
-    <div class="relative">
-        <span id="home" class="absolute -top-16"></span>
-    </div>
-    <div class="absolute w-64 h-64 -z-10">
-        <img class="w-full h-full absolute -top-1/2 -left-1/2" src="{{ asset('images/ripple.png') }}" alt="decorative ripple image">
-    </div>
-
-    <div class="md:grid md:grid-cols-2 lg:gap-48 md:px-4 md:mx-auto justify-between">
-        <div class="hidden md:flex mt-16 text-center flex-col justify-center">
-            <h1 class="text-5xl font-addison mb-8 text-secondary-text">Hello!</h1>
-            <p class="text-xl max-w-sm">
-                I’m Christian Delicaat, a passionate game development student who
-                has an interest in gameplay, tools, hexagons, and all things procedural.
+<div class="p-14 container mx-auto max-w-screen-xl md:px-28 transition-all duration-200">
+    <h2 class="font-rajdhani uppercase font-bold text-6xl tracking-tighter hidden lg:block">About me</h2>
+    <hr class="w-20 bg-primary-text h-1.5 my-6 hidden lg:block">
+    <div class="mb-10 flex flex-col lg:flex-row-reverse gap-6 gap-x-24">
+        <div class="lg:w-1/2 relative">
+            <img src="{{ asset('images/ba9f85b3-d63c-4bc8-becd-695d68e7594a.webp') }}" alt=""
+                 class="rounded-full max-w-96 w-full transition-all duration-1000 sm:rounded mx-auto">
+        </div>
+        <div class="lg:w-1/2">
+            <h2 class="font-rajdhani uppercase font-bold text-6xl tracking-tighter block lg:hidden">About me</h2>
+            <hr class="w-20 bg-primary-text h-1.5 my-6 block lg:hidden">
+            <p class="text-xl font-light tracking-tight">
+                Hallo! My name is <span class="font-bold">Christian Delicaat</span>, a game programming student based in the
+                Netherlands. I am currently in my third year at <a href="https://www.buas.nl/en" target="_blank" class="text-tertiary hover:underline">Breda University of Applied Sciences</a>.
+                I have always been passionate about playing and making video games! In my free time, I like to work on game
+                mechanics and gameplay tools, or I try to learn something new.
             </p>
-        </div>
-        <div class="relative mt-28 w-full"> {# Just Me #}
-            <div class="absolute -top-8 w-full mx-auto -z-10">
-                <div class="relative">
-                    <div class="bg-secondary w-72 h-72 rounded-full mx-auto"></div>
-                    <ul class="absolute top-2 z-10 font-addison text-5xl uppercase text-center w-full text-transparent text-stroke">
-                        <li>Tools</li>
-                        <li>Creativity</li>
-                        <li>Procedural</li>
-                        <li>Teamwork</li>
-                        <li>Gameplay</li>
-                    </ul>
+            <p class="text-xl font-light tracking-tight mt-4">
+                I look forward to contributing my skills and passion to new projects as I am currently looking for an internship
+                starting <span class="font-bold">September 2025</span>.
+            </p>
+            <div class="w-full">
+                <div class="mx-auto w-max lg:mx-0">
+                    <a href="{{ asset('files/CV_Christian_Delicaat.pdf') }}" download>
+                        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-14 mt-12 w-max font-bold text-lg tracking-wide transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+                            Download Resume
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="text-center absolute bottom-0 w-full mx-auto z-10">
-                <div class="mb-20 relative">
-                    <p class="text-secondary-text text-xs font-bold uppercase leading-none -mb-2">Let's build amazing games together!</p>
-                    <p class="font-addison text-7xl leading-none">Chris</p>
-                    <p class="z-20 top-1/2 w-full mx-auto font-birthstone text-secondary-text text-6xl leading-none absolute">Dev</p>
-                </div>
-            </div>
-            <div class="relative w-full md:w-fit">
-                <img class="-z-20 w-64 h-64 absolute left-1/2 top-44" src="{{ asset('images/ripple.png') }}" alt="decorative ripple image">
-                <img class="max-w-96 w-full mx-auto" src="{{ asset('images/portrait.png') }}" alt="Black and White Portrait Photo">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="px-10 py-10 text-center bg-secondary-text">
-    <div class="relative">
-        <span id="about-me" class="absolute -top-16"></span>
-    </div>
-    <div class="max-w-sm mx-auto">
-        <h1 class="md:hidden text-5xl font-addison text-primary mb-8">Hello!</h1>
-        <p class="md:hidden text-xl">
-            I’m Christian Delicaat, a passionate game development student who
-            has an interest in gameplay, tools, hexagons, and all things procedural.
-        </p>
-        <div data-controller="tooltip" class="flex w-full items-end justify-evenly">
-            <div data-action="click->tooltip#discord" class="relative w-min group mt-12 md:mt-0 flex flex-col justify-center">
-                <div class="z-0 absolute shadow-lg hidden bg-[#333] text-white font-semibold px-3 py-[6px] text-[13px] right-0 left-0 w-max -top-10 rounded before:w-4 before:h-4 before:rotate-45 before:bg-[#333] before:absolute before:-z-10 before:-bottom-1 before:left-0  before:right-0 before:mx-auto">
-                    Copied!
-                </div>
-                {{ icon.DiscordTransparent() }}
-            </div>
-
-            <a href="https://github.com/ArchBacon" target="_blank"
-               class="relative w-min group mt-12 md:mt-0 flex flex-col justify-center hover:text-primary-text">
-                {{ icon.GithubTransparent() }}
-            </a>
-
-            <div data-action="click->tooltip#email" class="relative w-min group mt-12 md:mt-0 flex flex-col justify-center">
-                <div class="z-0 absolute shadow-lg hidden bg-[#333] text-white font-semibold px-2 py-[6px] text-[13px] right-0 left-0 w-max -top-10 rounded before:w-4 before:h-4 before:rotate-45 before:bg-[#333] before:absolute before:-z-10 before:-bottom-1 before:left-0  before:right-0 before:mx-auto">
-                    Copied!
-                </div>
-                <span class="hover:text-primary-text md:h-6">
-                    {{ icon.EmailTransparent() }}
-                </span>
             </div>
         </div>
     </div>
