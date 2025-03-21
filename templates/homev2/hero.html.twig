@@ -1,16 +1,13 @@
 {% import 'shared/icons.html.twig' as icon %}
 
-<div class="p-14 container mx-auto max-w-screen-xl md:px-28 transition-all duration-200">
-    <h2 class="font-rajdhani uppercase font-bold text-6xl hidden lg:block">About me</h2>
-    <hr class="w-20 bg-primary-text h-1.5 my-6 hidden lg:block">
-    <div class="mb-10 flex flex-col lg:flex-row-reverse gap-6 gap-x-24">
+<p id="about-me" class="uppercase font-bold text-9xl text-secondary text-center border-b-2 border-secondary">ABOUT ME</p>
+<div class="container mx-auto max-w-screen-xl md:px-28 transition-all duration-200">
+    <div class="p-14 mb-10 flex flex-col lg:flex-row-reverse gap-6 gap-x-24">
         <div class="lg:w-1/2 relative">
             <img src="{{ asset('images/425312819_932689768890894_8238798993383042237_n.jpg') }}" alt=""
-                 class="rounded-full max-w-96 w-full transition-all duration-1000 sm:rounded-3xl mx-auto">
+                 class="rounded-full max-w w-full transition-all duration-1000 sm:rounded mx-auto">
         </div>
         <div class="lg:w-1/2">
-            <h2 class="font-rajdhani uppercase font-bold text-6xl block lg:hidden">About me</h2>
-            <hr class="w-20 bg-primary-text h-1.5 my-6 block lg:hidden">
             <p class="text-xl font-normal">
                 Hallo! My name is Christian "Chris" Delicaat, a <span class="font-bold">gameplay & tools programming</span> student and <span class="font-bold">proceduralism enthusiast</span> based in the
                 Netherlands. I am currently in my third year at Breda University of Applied Sciences.
@@ -31,3 +28,13 @@
         </div>
     </div>
 </div>
+<a href="#portfolio">
+    <div class="w-max mx-auto hidden mb-24 mt-32 lg:flex flex-col justify-center items-center">
+        {# https://codepen.io/rightblog/pen/EagNMN #}
+        <div>
+            <span class="m_scroll_arrows unu"></span>
+            <span class="m_scroll_arrows doi"></span>
+            <span class="m_scroll_arrows trei"></span>
+        </div>
+    </div>
+</a>
