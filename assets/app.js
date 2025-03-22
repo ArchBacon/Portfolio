@@ -16,33 +16,15 @@ import './styles/app.css';
 * on the page to only be visible on initial load and not after any other page load
 * or void url (javascript:void(0))
 */
-// -------------------------- CHATGPT CODE BELOW -------------------------------
-// Hide scroll CTA
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Element is in view
-            console.log('Anchor is on-screen!');
-            document.getElementById('scroll-cta').classList.replace("opacity-100", "opacity-0");
-        } else {
-            // Element is out of view
-            console.log('Anchor is off-screen!');
-            document.getElementById('scroll-cta').classList.replace("opacity-0", "opacity-100");
-        }
-    });
-}, {
-    threshold: 0.5 // 50% of the element is in the viewport
-});
-const anchor = document.querySelector('#portfolio'); // or use your anchor selector
-observer.observe(anchor);
 
+// -------------------------- CHATGPT CODE BELOW -------------------------------
 // Show scrol to top CTA
 const checkScroll = () => {
     const portfolioElement = document.querySelector('#portfolio');
     const totopCTA = document.getElementById('totop-cta');
     const portfolioRect = portfolioElement.getBoundingClientRect();
 
-    if (portfolioRect.top <= window.innerHeight * 0.5) {
+    if (portfolioRect.top <= window.innerHeight * 0.6) {
         totopCTA.classList.replace("opacity-0", "opacity-100"); // Show to-top CTA
     } else {
         totopCTA.classList.replace("opacity-100", "opacity-0"); // Hide to-top CTA

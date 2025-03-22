@@ -1,4 +1,5 @@
-<p id="portfolio" class="uppercase font-bold text-9xl text-secondary text-center border-b-2 border-secondary">PORTFOLIO</p>
+<p id="portfolio" class="uppercase font-bold text-9xl text-secondary text-center mb-8">PORTFOLIO</p>
+<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">STUDENT PROJECTS</p>
 <div class="p-14 grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
         false,
@@ -33,6 +34,7 @@
         asset('projects/planets/thumbnail_02_387x290.png'),
         asset('projects/planets/thumbnail_01_174x174.png'),
     ) }}
+    <p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
     {{ _self.project(
         true,
         'Hex Game Jam',
@@ -62,11 +64,11 @@
             <div class="flex flex-row justify-center items-center">
                 <div class="relative">
                     <img src="{{ image1 }}" alt=""
-                         class="rounded w-36 sm:w-52 md:w-[30.938rem] lg:w-[24.313rem] border border-secondary z-0">
+                         class="rounded w-36 sm:w-52 md:w-[30.938rem] lg:w-[24.313rem] z-0">
                     <img src="{{ image2 }}" alt=""
-                         class="rounded w-24 sm:w-32 md:w-[24.625rem] lg:w-[24.625rem] absolute right-32 sm:right-48 lg:right-[20%] top-3/4 md:top-2/3 border border-secondary -z-10">
+                         class="rounded w-24 sm:w-32 md:w-[24.625rem] lg:w-[24.625rem] absolute right-32 sm:right-48 lg:right-[20%] top-3/4 md:top-2/3 -z-10">
                     <img src="{{ image3 }}" alt=""
-                         class="rounded w-28 sm:w-36 md:w-[11.875rem] lg:w-[11.000rem] absolute left-28 sm:left-36 md:left-2/3 lg:left-[60%] top-1/2 sm:top-2/3 md:top-[105%] lg:top-[80%] border border-secondary z-10">
+                         class="rounded w-28 sm:w-36 md:w-[11.875rem] lg:w-[11.000rem] absolute left-28 sm:left-36 md:left-2/3 lg:left-[60%] top-1/2 sm:top-2/3 md:top-[105%] lg:top-[80%] z-10">
                 </div>
             </div>
         </div>
