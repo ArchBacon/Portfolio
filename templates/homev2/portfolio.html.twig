@@ -3,6 +3,7 @@
     {{ _self.project(
         false,
         'Marisol',
+        'Lead Programmer',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
         'Lead Programmer, Multidisciplinary, Unreal Engine, Visual Scripting, Student',
         path('app_project_marisol'),
@@ -13,6 +14,7 @@
     {{ _self.project(
         true,
         'Snopuck',
+        '',
         'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
         'Lead Programmer, Multidisciplinary, Unreal Engine, Visual Scripting, Student',
         path('app_project_snopuck'),
@@ -23,6 +25,7 @@
     {{ _self.project(
         false,
         'Procedural Planets',
+        '',
         'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
         'C++, Solo, Student',
         path('app_project_procedural_planets'),
@@ -33,6 +36,7 @@
     {{ _self.project(
         true,
         'Hex Game Jam',
+        '',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
         'Solo, XS, wren.io, Student',
         path('app_project_hexgamejam'),
@@ -45,6 +49,7 @@
 {% macro project(
     align_right = false,
     title = 'Project tile',
+    subtitle = 'project role',
     description = 'short description',
     tags = '',
     route = 'javascript:void(0)',
@@ -67,15 +72,18 @@
         </div>
         <div class="lg:w-[48%]">
             <div class="{% if align_right %}grid lg:justify-items-start{% endif %}">
-                <h2 class="font-rajdhani uppercase font-bold text-6xl tracking-tighter">{{ title }}</h2>
+                <div class="flex flex-row">
+                    <h2 class="font-rajdhani uppercase font-bold text-6xl align-text-top">{{ title }}</h2>
+                    <h3 class="font-rajdhani uppercase font-bold text-3xl align-text-top text-tertiary ml-4">{{ subtitle }}</h3>
+                </div>
                 <hr class="w-20 bg-primary-text h-1.5 my-6">
             </div>
             <p class="text-xl font-light tracking-tight">{{ description }}</p>
             {% set tags = tags|split(',') %}
             {% if tags[0] != '' %}
-                <div class="flex flex-wrap my-4 gap-2 text-[0.625rem]">
+                <div class="flex flex-wrap my-4 gap-2 text-md">
                     {% for tag in tags %}
-                        <span class="bg-secondary px-2.5 py-0.5 rounded text-tertiary">{{ tag }}</span>
+                        <span class="bg-secondary px-2.5 py-0.5 rounded text-quaternary">{{ tag }}</span>
                     {% endfor %}
                 </div>
             {% endif %}
