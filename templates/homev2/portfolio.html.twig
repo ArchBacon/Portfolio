@@ -1,8 +1,7 @@
 <p id="portfolio" class="uppercase font-bold text-6xl sm:text-9xl text-secondary text-center mb-8">PORTFOLIO</p>
 <p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">STUDENT PROJECTS</p>
-<div class="p-6 sm:p-14 grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
+<div class="p-6 sm:p-14 grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-36 container mx-auto max-w-screen-xl">
     {{ _self.project(
-        true,
         'Procedural Planets',
         '',
         'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
@@ -10,9 +9,9 @@
         path('app_project_procedural_planets'),
         asset('projects/planets/thumbnail_02_387x290.png'),
         asset('projects/planets/thumbnail_03_387x290.png'),
+        'https://github.com/ArchBacon/Archive-Procedural-Planets'
     ) }}
     {{ _self.project(
-        false,
         'Marisol',
         'Lead Programmer',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
@@ -22,7 +21,6 @@
         asset('projects/marisol/thumbnail_02_387x290.png'),
     ) }}
     {{ _self.project(
-        true,
         'Snopuck',
         'Lead Programmer',
         'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
@@ -33,9 +31,8 @@
     ) }}
 </div>
 <p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
-<div class="p-6 sm:p-14 grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
+<div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
-        false,
         'Hex Game Jam',
         '',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
@@ -48,30 +45,28 @@
 </div>
 
 {% macro project(
-    align_right = false,
     title = 'Project tile',
     subtitle = 'project role',
     description = 'short description',
     tags = '',
     route = 'javascript:void(0)',
     image1 = 'https://picsum.photos/603/452.webp',
-    image2 = 'https://picsum.photos/394/295.webp'
+    image2 = 'https://picsum.photos/394/295.webp',
+    github_route
     ) %}
-    <div class="mb-10 flex flex-col lg:flex-row {% if align_right %} lg:flex-row-reverse {% endif %} gap-x-14">
-        <div class="lg:w-[52%] relative min-h-[300px] sm:min-h-[480px]">
-            <div class="relative w-full {% if align_right %}md:flex md:justify-end{% endif %}">
+    <div class="mb-10 flex flex-col gap-x-14">
+        <div class="relative min-h-[300px] sm:min-h-[480px] mb-8">
+            <div class="relative w-full flex flex-col gap-y-2 items-end">
                 <img src="{{ image2 }}" alt="" class="rounded w-56 sm:w-96 -z-10">
-                <img src="{{ image1 }}" alt="" class="rounded w-56 sm:w-80 absolute right-0 {% if align_right %}sm:right-1/3{% endif %} top-2/3 z-0">
+                <img src="{{ image1 }}" alt="" class="rounded w-56 sm:w-96 absolute md:relative lg:absolute left-0 top-2/3 z-0">
             </div>
         </div>
-        <div class="lg:w-[48%]">
-            <div class="{% if align_right %}grid lg:justify-items-start{% endif %}">
-                <div class="flex flex-col">
-                    <h2 class="font-rajdhani uppercase font-bold text-6xl align-text-top">{{ title }}</h2>
-                    <h3 class="font-rajdhani uppercase font-bold text-3xl align-text-top text-tertiary md:ml-4">{{ subtitle }}</h3>
-                </div>
-                <hr class="w-20 bg-primary-text h-1.5 my-6">
+        <div>
+            <div class="flex flex-col">
+                <h2 class="font-rajdhani uppercase font-bold text-6xl align-text-top">{{ title }}</h2>
+                <h3 class="font-rajdhani uppercase font-bold text-3xl align-text-top text-tertiary md:ml-4">{{ subtitle }}</h3>
             </div>
+            <hr class="w-20 bg-primary-text h-1.5 my-6">
             <p class="text-xl font-light tracking-tight">{{ description }}</p>
             {% set tags = tags|split(',') %}
             {% if tags[0] != '' %}
@@ -81,15 +76,26 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            {{ _self.button('View project', route) }}
+            <div class="flex flex-col sm:flex-row sm:gap-4">
+                {{ _self.button('View project', route) }}
+                {% if github_route %} {{ _self.icon('github', github_route) }} {% endif %}
+            </div>
         </div>
     </div>
 {% endmacro %}
 
 {% macro button(content, route = 'javascript:void(0)') %}
     <a href="{{ route }}">
-        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-14 mt-12 w-max font-bold text-lg tracking-wide transition-colors ease-linear hover:bg-primary-text hover:text-primary">
-            View Project
+        <div class="uppercase border-2 border-primary-text bg-primary py-3 h-14 px-14 mt-12 w-max font-bold text-lg tracking-wide transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+            {{ content }}
+        </div>
+    </a>
+{% endmacro %}
+
+{% macro icon(lucide_icon, route = 'javascript:void(0)') %}
+    <a href="{{ route }}" target="_blank">
+        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 hidden sm:flex justify-center items-center mt-12 w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+            <i data-lucide="{{ lucide_icon }}"></i>
         </div>
     </a>
 {% endmacro %}
