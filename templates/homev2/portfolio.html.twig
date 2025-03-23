@@ -1,6 +1,16 @@
-<p id="portfolio" class="uppercase font-bold text-9xl text-secondary text-center mb-8">PORTFOLIO</p>
+<p id="portfolio" class="uppercase font-bold text-6xl sm:text-9xl text-secondary text-center mb-8">PORTFOLIO</p>
 <p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">STUDENT PROJECTS</p>
-<div class="p-14 grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
+<div class="p-6 sm:p-14 grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
+    {{ _self.project(
+        true,
+        'Procedural Planets',
+        '',
+        'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
+        'C++, Solo, Student',
+        path('app_project_procedural_planets'),
+        asset('projects/planets/thumbnail_02_387x290.png'),
+        asset('projects/planets/thumbnail_03_387x290.png'),
+    ) }}
     {{ _self.project(
         false,
         'Marisol',
@@ -8,35 +18,24 @@
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
         'Lead Programmer, Multidisciplinary, Unreal Engine, Visual Scripting, Student',
         path('app_project_marisol'),
-        asset('projects/marisol/thumbnail_02_387x290.png'),
         asset('projects/marisol/thumbnail_03_387x290.png'),
-        asset('projects/marisol/thumbnail_01_174x174.png'),
+        asset('projects/marisol/thumbnail_02_387x290.png'),
     ) }}
     {{ _self.project(
         true,
         'Snopuck',
-        'Generalist',
+        'Lead Programmer',
         'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
-        'Multidisciplinary, Unreal Engine, Visual Scripting, Student',
+        'Lead Programmer, Multidisciplinary, Unreal Engine, Visual Scripting, Student',
         path('app_project_snopuck'),
-        asset('projects/snopuck/thumbnail_02_387x290.png'),
         asset('projects/snopuck/thumbnail_03_387x290.png'),
-        asset('projects/snopuck/thumbnail_01_174x174.png'),
+        asset('projects/snopuck/thumbnail_02_387x290.png'),
     ) }}
+</div>
+<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
+<div class="p-6 sm:p-14 grid grid-cols-1 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
         false,
-        'Procedural Planets',
-        '',
-        'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
-        'C++, Solo, Student',
-        path('app_project_procedural_planets'),
-        asset('projects/planets/thumbnail_03_387x290.png'),
-        asset('projects/planets/thumbnail_02_387x290.png'),
-        asset('projects/planets/thumbnail_01_174x174.png'),
-    ) }}
-    <p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
-    {{ _self.project(
-        true,
         'Hex Game Jam',
         '',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
@@ -56,25 +55,18 @@
     tags = '',
     route = 'javascript:void(0)',
     image1 = 'https://picsum.photos/603/452.webp',
-    image2 = 'https://picsum.photos/394/295.webp',
-    image3 = 'https://picsum.photos/190/190.webp'
+    image2 = 'https://picsum.photos/394/295.webp'
     ) %}
-    <div class="mb-10 lg:min-h-[30rem] flex flex-col lg:flex-row {% if align_right %}lg:flex-row-reverse{% endif %} gap-x-14 gap-y-20 sm:gap-y-28 md:gap-y-64 lg:gap-y-72">
-        <div class="lg:w-[52%] relative">
-            <div class="flex flex-row justify-center items-center">
-                <div class="relative">
-                    <img src="{{ image1 }}" alt=""
-                         class="rounded w-36 sm:w-52 md:w-[30.938rem] lg:w-[24.313rem] z-0">
-                    <img src="{{ image2 }}" alt=""
-                         class="rounded w-24 sm:w-32 md:w-[24.625rem] lg:w-[24.625rem] absolute right-32 sm:right-48 lg:right-[20%] top-3/4 md:top-2/3 -z-10">
-                    <img src="{{ image3 }}" alt=""
-                         class="rounded w-28 sm:w-36 md:w-[11.875rem] lg:w-[11.000rem] absolute left-28 sm:left-36 md:left-2/3 lg:left-[60%] top-1/2 sm:top-2/3 md:top-[105%] lg:top-[80%] z-10">
-                </div>
+    <div class="mb-10 flex flex-col lg:flex-row {% if align_right %} lg:flex-row-reverse {% endif %} gap-x-14">
+        <div class="lg:w-[52%] relative min-h-[300px] sm:min-h-[480px]">
+            <div class="relative w-full {% if align_right %}md:flex md:justify-end{% endif %}">
+                <img src="{{ image2 }}" alt="" class="rounded w-56 sm:w-96 -z-10">
+                <img src="{{ image1 }}" alt="" class="rounded w-56 sm:w-80 absolute right-0 {% if align_right %}sm:right-1/3{% endif %} top-2/3 z-0">
             </div>
         </div>
         <div class="lg:w-[48%]">
             <div class="{% if align_right %}grid lg:justify-items-start{% endif %}">
-                <div class="flex flex-col md:flex-row">
+                <div class="flex flex-col">
                     <h2 class="font-rajdhani uppercase font-bold text-6xl align-text-top">{{ title }}</h2>
                     <h3 class="font-rajdhani uppercase font-bold text-3xl align-text-top text-tertiary md:ml-4">{{ subtitle }}</h3>
                 </div>

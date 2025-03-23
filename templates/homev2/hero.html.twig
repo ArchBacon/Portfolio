@@ -1,8 +1,8 @@
 {% import 'shared/icons.html.twig' as icon %}
 
-<p id="about-me" class="uppercase font-bold text-9xl text-secondary text-center border-b-2 border-secondary">ABOUT ME</p>
+<p id="about-me" class="uppercase font-bold text-6xl sm:text-9xl text-secondary text-center border-b-2 border-secondary">ABOUT ME</p>
 <div class="container mx-auto max-w-screen-xl md:px-28 transition-all duration-200">
-    <div class="p-14 mb-10 flex flex-col lg:flex-row-reverse gap-6 gap-x-24">
+    <div class="p-6 sm:p-14 mb-10 flex flex-col lg:flex-row-reverse gap-6 gap-x-24">
         <div class="lg:w-1/2 relative">
             <img src="{{ asset('images/425312819_932689768890894_8238798993383042237_n.jpg') }}" alt=""
                  class="rounded-full max-w w-full transition-all duration-1000 sm:rounded mx-auto">
@@ -10,26 +10,26 @@
         <div class="lg:w-1/2">
             <p class="text-xl font-normal">
                 Hallo! My name is Christian "Chris" Delicaat, a <span class="font-bold">gameplay & tools programming</span> student and <span class="font-bold">proceduralism enthusiast</span> based in the
-                Netherlands. I am currently in my third year at Breda University of Applied Sciences.
+                Netherlands.
             </p>
             <p class="text-xl font-normal mt-4">
-                I look forward to contributing my skills and passion to new projects as I am <span class="text-tertiary">currently looking for an internship</span>
+                I am in my third year at Breda University of Applied Sciences and <span class="text-tertiary">currently looking for an internship</span>
                 starting September 2025.
             </p>
             <div class="w-full">
-                <div class="mx-auto w-max lg:mx-0 flex flex-row gap-4">
+                <div class="mx-auto w-max lg:mx-0 flex flex-row sm:gap-4">
                     <a href="{{ asset('files/CV_Christian_Delicaat.pdf') }}" download>
                         <div class="uppercase border-2 border-primary-text bg-primary py-3 h-14 flex items-center px-14 mt-12 w-max font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
                             Download Resume
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/christian-delicaat-a06533350/" target="_blank">
-                        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 flex justify-center items-center mt-12 w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+                        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 hidden sm:flex justify-center items-center mt-12 w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
                             <i data-lucide="linkedin"></i>
                         </div>
                     </a>
                     <a href="https://github.com/ArchBacon" target="_blank">
-                        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 flex justify-center items-center mt-12 w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+                        <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 hidden sm:flex justify-center items-center mt-12 w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
                             <i data-lucide="github"></i>
                         </div>
                     </a>
