@@ -37,4 +37,22 @@ class ProjectController extends AbstractController
     {
         return $this->render('project/hex_gamejam.html.twig');
     }
+
+    #[Route('/project/supersuperheat', name: 'app_supersuperheat')]
+    public function supersuperheat(): Response
+    {
+        return $this->render('project/supersuperheat.html.twig');
+    }
+
+    #[Route('/project/portfolio', name: 'app_portfolio')]
+    public function portfolio(): Response
+    {
+        return $this->render('project/portfolio.html.twig');
+    }
+
+    #[Route('/project/epc2023', name: 'app_epc2023')]
+    public function epc2023(): Response
+    {
+        return $this->render('project/epc2023.html.twig');
+    }
 }

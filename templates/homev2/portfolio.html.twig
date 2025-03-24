@@ -40,7 +40,42 @@
         path('app_project_hexgamejam'),
         asset('projects/hex_gamejam/thumbnail_02_387x290.png'),
         asset('projects/hex_gamejam/thumbnail_03_387x290.png'),
-        asset('projects/hex_gamejam/thumbnail_01_174x174.png'),
+    ) }}
+</div>
+<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">MODS</p>
+<div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
+    {{ _self.project(
+        'Super SuperHeat',
+        'Melvor Idle Mod',
+        'A mod that removes the smithing requirement for the superheat spells in the Alt Magic skill.',
+        'Mod, Melvor Idle, Solo',
+        path('app_supersuperheat'),
+        asset('projects/super_superheat/superheat_512x288.png'),
+        '',
+        'https://github.com/ArchBacon/SuperSuperheat'
+    ) }}
+</div>
+<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">WEB PROJECTS</p>
+<div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
+    {{ _self.project(
+        'Portfolio',
+        '',
+        'The portfolio website you\'re currently looking at.',
+        'Website, Solo',
+        path('app_portfolio'),
+        asset('projects/portfolio/portfolio_02.png'),
+        '',
+        'https://github.com/ArchBacon/Portfolio'
+    ) }}
+    {{ _self.project(
+        'EPC 2023',
+        '',
+        'Website build for the Everything Procedural Conference 2023',
+        'Commission, Website, Solo',
+        path('app_epc2023'),
+        asset('projects/epc2023/epc.png'),
+        '',
+        'https://github.com/ArchBacon/EverythingProcedural'
     ) }}
 </div>
 
@@ -55,10 +90,10 @@
     github_route
     ) %}
     <div class="mb-10 flex flex-col gap-x-14">
-        <div class="relative min-h-[300px] sm:min-h-[480px] mb-8">
-            <div class="relative w-full flex flex-col gap-y-2 items-end">
-                <img src="{{ image2 }}" alt="" class="rounded w-56 sm:w-96 -z-10">
-                <img src="{{ image1 }}" alt="" class="rounded w-56 sm:w-96 absolute md:relative lg:absolute left-0 top-2/3 z-0">
+        <div class="relative {% if image2 != '' %}min-h-[300px] sm:min-h-[480px]{% endif %} mb-8">
+            <div class="relative w-full flex flex-col gap-y-2 {% if image2 != '' %}items-end{% endif %}">
+                {% if image2 != '' %}<img src="{{ image2 }}" alt="" class="border-2 border-secondary rounded w-56 sm:w-96 -z-10">{% endif %}
+                <img src="{{ image1 }}" alt="" class="border-2 border-secondary rounded w-56 sm:w-96 {% if image2 != '' %}absolute md:relative lg:absolute left-0 top-2/3 z-0{% endif %}">
             </div>
         </div>
         <div>
