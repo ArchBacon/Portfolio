@@ -1,6 +1,6 @@
-<p id="portfolio" class="uppercase font-bold text-6xl sm:text-9xl text-secondary text-center mb-8">PORTFOLIO</p>
-<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">STUDENT PROJECTS</p>
-<div class="p-6 sm:p-14 grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-36 container mx-auto max-w-screen-xl">
+<p id="portfolio" class="uppercase font-bold text-6xl sm:text-9xl text-primary-text text-center mb-8">PORTFOLIO</p>
+<p class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">STUDENT PROJECTS</p>
+<div id="student-projects" class="p-6 sm:p-14 grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-36 container mx-auto max-w-screen-xl">
     {{ _self.project(
         'Procedural Planets',
         '',
@@ -30,7 +30,8 @@
         asset('projects/snopuck/thumbnail_02_387x290.png'),
     ) }}
 </div>
-<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
+
+<p id="game-jams" class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
 <div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
         'Hex Game Jam',
@@ -42,7 +43,8 @@
         asset('projects/hex_gamejam/thumbnail_03_387x290.png'),
     ) }}
 </div>
-<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">MODS</p>
+
+<p id="mods" class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">MODS</p>
 <div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
         'Super SuperHeat',
@@ -55,7 +57,8 @@
         'https://github.com/ArchBacon/SuperSuperheat'
     ) }}
 </div>
-<p class="uppercase font-bold text-5xl text-secondary text-center border-b-2 border-secondary mb-4">WEB PROJECTS</p>
+
+<p id="web-projects" class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">WEB PROJECTS</p>
 <div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
         'Portfolio',

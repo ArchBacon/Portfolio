@@ -1,8 +1,23 @@
 {% extends 'base.html.twig' %}
+{% import 'shared/header.html.twig' as menu %}
 
 {% block title %}Portfolio{% endblock %}
 
 {% block body %}
+    <div class="border-l border-tertiary bg-secondary/[.95] fixed right-0 top-1/4 hidden lg:block z-40">
+        <h3 class="flex h-12 text-xl items-center rounded-lg px-4 font-bold">Contents</h3>
+        {{ _self.route('About Me', '#about-me') }}
+        {{ _self.route('Student Projects', '#student-projects') }}
+        {{ _self.route('Game Jams', '#game-jams') }}
+        {{ _self.route('Mods', '#mods') }}
+        {{ _self.route('Web Projects', '#web-projects') }}
+    </div>
     {% include 'homev2/hero.html.twig' %}
     {% include 'homev2/portfolio.html.twig' %}
 {% endblock %}
+
+{% macro route(name, route = 'javascript:void(0)') %}
+    <a href="{{ route }}" data-action="click->menu#close" class="flex h-12 items-center rounded-lg px-4 pr-8 hover:bg-zinc-800">
+        <span class="w-full">{{ name }}</span>
+    </a>
+{% endmacro %}
