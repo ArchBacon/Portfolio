@@ -1,10 +1,28 @@
-﻿{% extends 'base.html.twig' %}
+﻿{% extends 'project/project.html.twig' %}
 
 {% block title %}EPC 2023{% endblock %}
+{% block subtitle %}Everything Procedural{% endblock %}
 
-{% block body %}
-    <div class="min-h-[calc(100vh-6.5rem)] mx-auto w-full py-16 flex flex-col space-y-4">
-        <h1 class="text-3xl font-addison text-center">EPC 2023</h1>
-        <img class="max-w-96" src="{{ asset('projects/epc2023/epc.png') }}" alt="">
+{% block content %}
+
+
+
+    {{ _self.paragraph("
+        For the <span class=\"text-tertiary\">Everything Procedural Conference 2023</span> I was asked to create a website
+        since they wanted to update their old website. I created a design that was approved by
+        <a href=\"https://www.linkedin.com/in/bojanendrovski/\" target=\"blank\" class=\"text-tertiary inline-flex\">Bojan Endrovski <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a> and
+        <a href=\"https://www.linkedin.com/in/frankenronny/\" target=\"blank\" class=\"text-tertiary inline-flex\">Ronny Franken <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a>, the lecturers who are
+        involved with EPC. The design was later modified by them before being used as a final version on the website. You can view both versions below.
+
+        <div class=\"grid grid-cols-2 grid-rows-1 gap-x-4\">
+            <span class=\"inline-block\">View the original version <a href=\"https://epc2023v1.itschris.dev/\" target=\"blank\" class=\" text-tertiary inline-flex\"> here. <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a></span>
+            <span class=\"inline-block\">View the modified version <a href=\"https://epc2023v2.itschris.dev/\" target=\"blank\" class=\" text-tertiary inline-flex\"> here. <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a></span>
+        </div>
+    ") }}
+
+    <div class="grid grid-cols-2 grid-rows-1 gap-x-4">
+        {{ _self.image(asset('projects/epc2023/custom_epc23.png'), 'The version I build for EPC') }}
+        {{ _self.image(asset('projects/epc2023/modified_epc23.png'), 'Version after EPC modified it') }}
     </div>
 {% endblock %}
+

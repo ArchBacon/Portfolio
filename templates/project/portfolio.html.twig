@@ -1,10 +1,35 @@
-﻿{% extends 'base.html.twig' %}
+﻿{% extends 'project/project.html.twig' %}
 
 {% block title %}Portfolio{% endblock %}
 
-{% block body %}
-    <div class="min-h-[calc(100vh-6.5rem)] mx-auto w-full py-16 flex flex-col space-y-4">
-        <h1 class="text-3xl font-addison text-center">Portfolio</h1>
-        <img class="max-w-96" src="{{ asset('projects/portfolio/portfolio_02.png') }}" alt="">
+{% block content %}
+    {{ _self.paragraph("
+        I built my portfolio website <span class=\"text-tertiary\">from scratch</span> because I like having full control over what I make. Rather than
+        relying on templates or third-party platforms, I wanted something <span class=\"text-tertiary\">lightweight, custom, and easy to maintain</span>.
+        It’s a simple space to show what I’ve worked on, without any distractions or unnecessary fluff.
+    ") }}
+
+    <p class="pb-4">
+        Interested in more? Check out my <span class="text-tertiary">socials</span> or download my <span class="text-tertiary">resume</span>!
+    </p>
+    <div class="w-full">
+        <div class="mx-auto w-max lg:mx-0 flex flex-row sm:gap-4">
+            <a href="{{ asset('files/CV_Christian_Delicaat.pdf') }}" download>
+                <div class="uppercase border-2 border-primary-text bg-primary py-3 h-14 flex items-center px-14 w-max font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+                    Download Resume
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/christian-delicaat-a06533350/" target="_blank">
+                <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 hidden sm:flex justify-center items-center w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+                    <i data-lucide="linkedin"></i>
+                </div>
+            </a>
+            <a href="https://github.com/ArchBacon" target="_blank">
+                <div class="uppercase border-2 border-primary-text bg-primary py-3 px-3 h-14 hidden sm:flex justify-center items-center w-14 font-bold text-lg transition-colors ease-linear hover:bg-primary-text hover:text-primary">
+                    <i data-lucide="github"></i>
+                </div>
+            </a>
+        </div>
     </div>
 {% endblock %}
+

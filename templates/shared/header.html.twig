@@ -5,7 +5,8 @@
     <header data-controller="theme" class="flex flex-row justify-between z-40 h-16 w-full px-4 py-1 drop-shadow-md bg-primary fixed">
         <span class="flex-1"></span>
         <a class="font-roboto-condensed uppercase font-bold text-6xl tracking-tighter" href="{{ path('app_home') }}">
-            <img data-theme-target="logo" class="h-full" src="{{ asset('images/logo_light.png') }}" alt="ITS CHRIS">
+{#            <img data-theme-target="logo" class="h-full" src="{{ asset('images/logo_light.png') }}" alt="ITS CHRIS">#}
+            <h1 class="font-rajdhani uppercase font-bold text-6xl align-text-top">ITS CHRIS</h1>
         </a>
         <button class="flex flex-1 justify-end items-center" type="button">
             <i data-action="click->menu#open" class="text-primary-text block w-6 h-6" data-lucide="align-right"></i>
@@ -15,7 +16,8 @@
          class="pointer-events-none fixed top-0 z-40 h-screen w-screen cursor-pointer bg-zinc-800 opacity-0 transition-opacity duration-500 ease-out"></div>
     <aside data-menu-target="menu" class="fixed top-0 -right-full z-50 h-full w-5/6 max-w-sm bg-primary p-5 duration-500 ease-in-out md:-right-96">
         <a class="flex justify-center w-full mb-5" href="{{ path('app_home') }}">
-            <img data-theme-target="logo" class="h-12" src="{{ asset('images/logo_light.png') }}" alt="ITS CHRIS">
+{#            <img data-theme-target="logo" class="h-12" src="{{ asset('images/logo_light.png') }}" alt="ITS CHRIS">#}
+            <h1 class="font-rajdhani uppercase font-bold text-6xl align-text-top">ITS CHRIS</h1>
         </a>
         {{ menu.route('About Me', '#about-me') }}
         {{ menu.route('Student Projects', '#student-projects') }}
