@@ -1,10 +1,34 @@
-{% extends 'base.html.twig' %}
+{% extends 'project/project.html.twig' %}
 
 {% block title %}Procedural Planets{% endblock %}
+{% block subtitle %}{% endblock %}
 
-{% block body %}
-    <div class="min-h-[calc(100vh-6.5rem)] mx-auto w-full py-16 flex flex-col space-y-4">
-        <h1 class="text-3xl font-addison text-center">Procedural Planets</h1>
-        <img class="max-w-96" src="{{ asset('images/procplanets.png') }}" alt="">
+{% block routes %}
+    {{ _self.route('The Project', '#the-project') }}
+    {{ _self.route('Sneak Peak', '#sneak-peak') }}
+    {{ _self.route('Responsibilities', '#responsibilities') }}
+    {{ _self.route('Procedural Animation', '#procedural-animation') }}
+    {{ _self.route('Puzzle System', '#puzzle-system') }}
+{% endblock %}
+
+{% block content %}
+    {{ _self.paragraph("
+        <span class=\"italic\">Procedural Planets</span> is a solo project developed over 8 weeks in <span class=\"text-tertiary\">C++</span>. It explores
+        procedural content generation by creating stylized, noise-driven planets rendered on UV spheres. The focus was
+        on generating terrain and textures using layered 3D noise and experimenting with procedural cloud techniques.
+        </br>
+        </br>
+        <span class=\"inline-block\">I wrote a more in-depth article <a href=\"https://archbacon.github.io/procedural-planets/\" target=\"blank\" class=\"
+        text-tertiary inline-flex\"> here. <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a></span>
+        </br>
+        <span class=\"inline-block\">Or view the code <a href=\"https://github.com/ArchBacon/Archive-Procedural-Planets\" target=\"blank\" class=\"
+        text-tertiary inline-flex\"> here. <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a></span>
+    ") }}
+
+    {{ _self.video(asset('projects/planets/tool_usage.webm'), 'Generation tool being used to configure a planet.', true) }}
+
+    <div class="flex flex-wrap gap-4 my-8 justify-evenly">
+        <img class="h-16" src="{{ asset('images/buas.png') }}" alt="Breda University of Applied Sciences Logo">
     </div>
 {% endblock %}
+

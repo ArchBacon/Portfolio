@@ -37,9 +37,9 @@
     </div>
 {% endmacro %}
 
-{% macro video(source, description) %}
+{% macro video(source, description, autoplay = false) %}
     <div class="pb-4">
-        <video controls muted>
+        <video {% if autoplay == false%} controls {% endif%} muted {% if autoplay == true %} autoplay loop {% endif%}>
             <source src="{{ source }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
