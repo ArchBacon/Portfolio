@@ -2,6 +2,7 @@
 <p class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">STUDENT PROJECTS</p>
 <div id="student-projects" class="p-6 sm:p-14 grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-36 container mx-auto max-w-screen-xl">
     {{ _self.project(
+        false,
         'Procedural Planets',
         '',
         'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
@@ -12,6 +13,7 @@
         'https://github.com/ArchBacon/Archive-Procedural-Planets'
     ) }}
     {{ _self.project(
+        true,
         'Marisol',
         'Lead Programmer',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
@@ -21,6 +23,7 @@
         asset('projects/marisol/thumbnail_02_387x290.png'),
     ) }}
     {{ _self.project(
+        false,
         'Snopuck',
         'Lead Programmer',
         'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
@@ -34,6 +37,7 @@
 <p id="game-jams" class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">GAME JAMS</p>
 <div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
+        false,
         'Hex Game Jam',
         '',
         'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
@@ -47,6 +51,7 @@
 <p id="mods" class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">MODS</p>
 <div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
+        false,
         'Super SuperHeat',
         'Melvor Idle Mod',
         'A mod that removes the smithing requirement for the superheat spells in the Alt Magic skill.',
@@ -61,6 +66,7 @@
 <p id="web-projects" class="uppercase font-bold text-5xl text-primary-text text-center border-b-2 border-secondary mb-4">WEB PROJECTS</p>
 <div class="p-6 sm:p-14 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-24 container mx-auto max-w-screen-xl">
     {{ _self.project(
+        false,
         'Portfolio',
         '',
         'The portfolio website you\'re currently looking at.',
@@ -71,6 +77,7 @@
         'https://github.com/ArchBacon/Portfolio'
     ) }}
     {{ _self.project(
+        false,
         'EPC 2023',
         '',
         'Website build for the Everything Procedural Conference 2023',
@@ -83,6 +90,7 @@
 </div>
 
 {% macro project(
+    ready_to_show = false,
     title = 'Project tile',
     subtitle = 'project role',
     description = 'short description',
@@ -90,7 +98,7 @@
     route = 'javascript:void(0)',
     image1 = 'https://picsum.photos/603/452.webp',
     image2 = 'https://picsum.photos/394/295.webp',
-    github_route
+    github_route,
     ) %}
     <div class="mb-10 flex flex-col gap-x-14">
         <div class="relative {% if image2 != '' %}min-h-[300px] sm:min-h-[480px]{% endif %} mb-8">
@@ -115,8 +123,12 @@
                 </div>
             {% endif %}
             <div class="flex flex-col sm:flex-row sm:gap-4">
-                {{ _self.button('View project', route) }}
-                {% if github_route %} {{ _self.icon('github', github_route) }} {% endif %}
+                {% if ready_to_show == true %}
+                    {{ _self.button('View project', route) }}
+                    {% if github_route %}
+                        {{ _self.icon('github', github_route) }}
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>

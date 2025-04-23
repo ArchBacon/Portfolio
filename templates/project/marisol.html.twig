@@ -1,104 +1,110 @@
 {% extends 'project/project.html.twig' %}
 
 {% block title %}Marisol{% endblock %}
+{% block subtitle %}Lead Programmer{% endblock %}
 
-{% block video %}
-    <iframe class="w-full bg-zinc-900 aspect-video max-w-full rounded"
-            src="https://www.youtube.com/embed/Al4l8_RPOVA?si=EWLtGw213kBuxuao"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-    ></iframe>
+{% block routes %}
+    {{ _self.route('The Project', '#the-project') }}
+    {{ _self.route('Sneak Peak', '#sneak-peak') }}
+    {{ _self.route('Responsibilities', '#responsibilities') }}
+    {{ _self.route('Procedural Animation', '#procedural-animation') }}
+    {{ _self.route('Puzzle System', '#puzzle-system') }}
 {% endblock %}
 
 {% block content %}
     {{ _self.heading('The Project') }}
     {{ _self.paragraph("
-        <a class=\"text-tertiary hover:underline\" href=\"https://buas.itch.io/marisol\">Marisol</a> is a game made in
-        8 weeks by 23 students unfamiliar with each other. Players explore the world by interacting with its local
-        residents, defeating enemies, and solving puzzles.
+        <span class=\"italic\">Marisol</span> is a game developed
+        in just 8 weeks by a team of 23 students — 5 programmers, 4 designers, and 14 artists — who began the project
+        without knowing each other. Players explore the world by interacting with its local residents, solving puzzles,
+        and fighting enemies along the way. The project originally began as an art-showcase of 15 artists,
+        who established the visual style and built the world over 8 weeks. Afterwards, programmers and designers joined
+        turn the world into a game.
+        </br>
+        </br>
+        <span class=\"inline-block\">View the game on <a href=\"https://buas.itch.io/marisol\" target=\"blank\" class=\"
+        text-tertiary inline-flex\"> Itch.io <i data-lucide=\"external-link\" class=\"w-4 h-4\"></i></a></span>
     ") }}
+
+    {{ _self.heading('Sneak Peak') }}
+    <div class="flex sm:flex-row flex-col gap-x-4">
+        {{ _self.video(asset('projects/marisol/mywork_procanim.webm'), 'Step by step progress on procedural animation') }}
+        {{ _self.video(asset('projects/marisol/mywork_puzzlesystem.webm'), 'Step by step progress on the puzzle system') }}
+    </div>
 
     {{ _self.heading('Responsibilities') }}
     {{ _self.paragraph("
-        As the lead programmer for this project, I had many miscellaneous tasks and responsibilities. Some highlights
-        include writing a project style-guide for the entire team, delegating tasks, and getting developers to agree on
-        the project's direction. During meetings with the leads and producer, it was always appreciated that I could
-        explain goals and limitations in a non-technical way and give proper estimates on discussed goals.
-    ") }}
-
-    {{ _self.heading('Puzzles | Gameplay Tools') }}
-    {{ _self.paragraph("
-        We quickly knew that we wanted puzzles in our game, so I set out to create a system that the designers could use
-        to create more puzzles without the help of programmers. I tested some simple concepts, such as opening a door
-        with the right levers pulled and closing the door after the player walked past it. I quickly found some
-        limitations with what I had built and expanded it before sending it to the designers for testing with proper
-        documentation on the systems.
+        As the <span class=\"text-tertiary\">lead programmer</span> on <span class=\"italic\">Marisol</span>, I took on a
+        wide range of responsibilities across the project. Some highlights include writing a project-wide code style
+        guide, (re-)structuring the project, and helping steer the overall direction alongside the leads and producer.
+        I have also worked on important systems that requires good communication, such as <span class=\"text-tertiary\">
+        procedural animation</span> and a <span class=\"text-tertiary\">puzzle system</span> that designers used to created puzzles.
     ") }}
     {{ _self.paragraph("
-        I ended up with a system comprising three components: puzzle parts, Validators, and Actions. Puzzle parts, such
-        as doors, levers, and lights, are generally visible in the game. These parts have a boolean state to set them;
-        depending on the context, it could mean that a door is \"open\" or \"closed\".
+        One of my strengths was being able to clearly communicate technical goals and limitations in a non-technical,
+        accessible way, which helped the team make informed decisions and set realistic expectations. I also played a
+        key role in <span class=\"text-tertiary\">cross-discipline communication</span> — organizing strike teams, staying up-to-date on team progress, and
+        making sure everyone had the direction and support they needed.
     ") }}
-    {{ _self.paragraph("
-        Validators are used to check the state of one or more puzzle parts and trigger events on other parts. Validators
-        can be configured to change behavior to fit the needs of the puzzle the designers are trying to create. Finally,
-        we have the Action component. The action component is the simplest of the three and is only used to set parts to
-        a specific state. This is useful if things only need to happen once or to reset a puzzle to its original state.
-        Each component also has its own icon to differentiate it from all the other actors in the world.
-    ") }}
-    <div class="flex flex-row gap-x-4 justify-evenly text-center">
-        <div class="w-24">{{ _self.image(asset('projects/marisol/puzzle_part.png'), 'Part') }}</div>
-        <div class="w-24">{{ _self.image(asset('projects/marisol/puzzle_validator.png'), 'Validator') }}</div>
-        <div class="w-24">{{ _self.image(asset('projects/marisol/puzzle_action.png'), 'Action') }}</div>
-    </div>
-    {{ _self.paragraph("
-        One of the artists designed a tower with the final puzzle inside. This is the largest puzzle implemented in the
-        game and can be difficult to solve if not carefully explored. The pressure plates on the ground trigger the
-        adjacent staircase to rise so the player can find their way up to the tower to confront the antagonist. The
-        puzzle in the tower is based on a light puzzle where all tiles need to glow for it to be complete, but
-        triggering one tile also triggers all its adjacent tiles.
-    ") }}
-    {{ _self.image(asset('projects/marisol/early_puzzle_implementation.webp'), 'Light puzzle inside the tower') }}
-    {{ _self.image(asset('projects/marisol/puzzle_tower.png'), 'Light puzzle inside the tower') }}
-    <div class="flex sm:flex-row flex-col gap-x-4">
-        {{ _self.image(asset('projects/marisol/tower_puzzle_showcase.webp'), 'Standing on a pressure plates triggers parts of the puzzle') }}
-        {{ _self.image(asset('projects/marisol/designer_puzzles.webp'), 'Puzzles made by designers using my puzzle system/components') }}
-    </div>
 
     {{ _self.heading('Procedural Animation') }}
     {{ _self.paragraph("
         During the project, we intended to use quite a lot of animations, but it would take too much time for the two
-        animators on our team to create all of them. With 3 weeks left on the project, I volunteered to start working on
-        procedural movement animations. With absolutely zero experience in animation or procedural animation, it would
-        be a challenge to learn and implement it in the game in such a short time.
+        animators on our team to create all of them. I started working on procedural movement animations for our crab enemy.
     ") }}
+    <div class="flex sm:flex-row flex-col gap-x-4">
+        {{ _self.image(asset('projects/marisol/enemy_animation.webp'), 'Enemy moving using the procedural animation') }}
+        {{ _self.image(asset('projects/marisol/crabosaurus.webp'), 'Easter egg that always got a reaction out of players') }}
+    </div>
     {{ _self.paragraph("
-        After researching and seeing how other people online created procedural animations in Unreal Engine's Control
-        Rig Editor, I started working on my version based on one of the resources found online. In their version of the
-        control rig, the legs of their spider model would reset to their reference position based on a timer. This
-        worked great if the spider was always moving at a slow and constant speed, but if the enemy were to move a bit
-        faster, the legs would drag after the crab model we had.
-    ") }}
-    {{ _self.paragraph("
-        My solution was to create a system in which the legs moved within a predetermined range so that no matter how
-        fast the crab moved, it would always look correct and move only when needed. If one leg was too far in front,
-        move it to the back and vice versa.
+        After researching procedural animation techniques online for Unreal Engine's Control Rig Editor, I build my own
+        solution based on an online tutorial. In the original, the legs of the spider model would reset to their reference
+        position based on a timer. This worked great if our crab was always moving at a slow and constant speed, but if
+        it were to move a bit faster, the legs would drag after the crab model we had. I designed a range-based system
+        where each leg only moved once it exceeded a set distance, ensuring the crab’s looks good at almost any speed.
     ") }}
     {{ _self.image(asset('projects/marisol/crab_leg_range.png'), 'Range the legs can move in, in Unreal units') }}
     {{ _self.paragraph("
-        With the procedural animation working as intended, it was time to start blending the procedural animation with
-        the hand-made animations the artist had worked on. The artist animated multiple idle and attack animations,
-        which would make the crab feel a lot more alive, while the procedural animation would always look proper, no
-        matter the terrain it would walk on.
+        With the procedural animation working, I started blending it with the hand-made animations the artist created.
+        They made several idle and attack animations to give the crab more character, while the procedural system kept
+        the movement looking right on any terrain.
     ") }}
     {{ _self.image(asset('projects/marisol/crab_animated.gif'), 'Legs fully animated when moving and rotating') }}
 
+    {{ _self.heading('Puzzle System') }}
+    {{ _self.paragraph("
+        The game had a focus on puzzles, so I created a system that allowed designers to build them without needing
+        programmer support. I started with simple interactions, like pulling levers to open doors, and expanded the
+        system after running into limitations. Once it was stable, I documented everything and handed it off for testing.
+    ") }}
     <div class="flex sm:flex-row flex-col gap-x-4">
-    {{ _self.image(asset('projects/marisol/enemy_animation.webp'), 'Enemy moving using the procedural animation') }}
-    {{ _self.image(asset('projects/marisol/crabosaurus.webp'), '"Little" easter egg that often got a reaction out of the players') }}
+        {{ _self.image(asset('projects/marisol/tower_puzzle_showcase.webp'), 'Standing on a pressure plates triggers parts of the puzzle') }}
+        {{ _self.image(asset('projects/marisol/designer_puzzles.webp'), 'Puzzles made by designers using my puzzle system/components') }}
     </div>
+    <div class="pb-8">
+        <p class="pb-2">
+            The system has three components: Puzzle Parts, Validators, and Actions. Each component has a <span
+            class="text-tertiary">unique icon</span> in the editor to help designers spot them in the world.
+        </p>
+        <ul class="list-disc">
+            <li><span class="text-tertiary">Puzzle Parts</span> are things like doors, levers, and lights. Each has a boolean state — like open or closed.</li>
+            <li><span class="text-tertiary">Validators</span> check the state of one or more parts and trigger changes in others. They’re customizable to fit different puzzle setups.</li>
+            <li><span class="text-tertiary">Actions</span> set puzzle parts to a specific state — useful for resets or one-time events.</li>
+        </ul>
+    </div>
+
+    <div class="flex sm:flex-row flex-col gap-x-4">
+        {{ _self.image(asset('projects/marisol/early_puzzle_implementation.webp'), 'Light puzzle prototype') }}
+        {{ _self.image(asset('projects/marisol/puzzle_tower.png'), 'Light puzzle final version') }}
+    </div>
+
+    {{ _self.paragraph("
+        The largest puzzle is inside a tower designed by one of the artists. It’s a light puzzle where all pressure
+        plates need to glow to solve it, but stepping on one also toggles the ones around it. As the player moves
+        through the puzzle, the pressure plates raise stairs that let them reach the top of the tower to confront the
+        antagonist.
+    ") }}
+    {{ _self.image(asset('projects/marisol/setup_puzzle_example.webp'), 'Setting up some puzzle parts') }}
 
     <div class="flex flex-wrap gap-4 my-8 justify-evenly">
         <img class="h-16" src="{{ asset('images/buas.png') }}" alt="Breda University of Applied Sciences Logo">

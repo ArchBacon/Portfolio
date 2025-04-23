@@ -1,14 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="border-l border-tertiary bg-secondary/[.95] fixed right-0 top-1/4 hidden lg:block z-40">
+        <h3 class="flex h-12 text-xl items-center rounded-lg px-4 font-bold">Contents</h3>
+        {% block routes %}{% endblock %}
+    </div>
+
     <div class="w-full bg-primary">
         <div class="container max-w-3xl mx-auto px-5 mt-6">
-            <h1 class="font-roboto-condensed uppercase font-bold text-6xl tracking-tighter">{% block title %}Project Name{% endblock %}</h1>
+            <div class="flex flex-col">
+                <h1 class="font-rajdhani uppercase font-bold text-6xl align-text-top">{% block title %}Project Name{% endblock %}</h1>
+                <h2 class="font-rajdhani uppercase font-bold text-3xl align-text-top text-tertiary md:ml-4">{% block subtitle %}{% endblock %}</h2>
+            </div>
             <hr class="w-20 bg-primary-text h-1.5 my-6">
             <div class="py-5">
-                {% block video %}{% endblock %}
-            </div>
-            <div class="pb-5">
                 {% block content %}Content Body{% endblock %}
             </div>
         </div>
@@ -16,7 +21,7 @@
 {% endblock %}
 
 {% macro heading(value) %}
-    <h2 class="text-xl font-bold pb-4">{{ value }}</h2>
+    <h2 id="{{ value|lower|replace({' ': '-'}) }}" class="text-xl font-bold pb-4">{{ value }}</h2>
 {% endmacro %}
 
 {% macro paragraph(value) %}
@@ -30,4 +35,20 @@
         <img class="w-full rounded" src="{{ source }}" alt="" loading="lazy">
         <p class="italic text-zinc-500">{{ description|raw }}</p>
     </div>
+{% endmacro %}
+
+{% macro video(source, description) %}
+    <div class="pb-4">
+        <video controls muted>
+            <source src="{{ source }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="italic text-zinc-500">{{ description|raw }}</p>
+    </div>
+{% endmacro %}
+
+{% macro route(name, route = 'javascript:void(0)') %}
+    <a href="{{ route }}" data-action="click->menu#close" class="flex h-12 items-center rounded-lg px-4 pr-8 hover:bg-zinc-800">
+        <span class="w-full">{{ name }}</span>
+    </a>
 {% endmacro %}
