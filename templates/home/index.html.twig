@@ -16,9 +16,29 @@
 
             <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
                 {{ card.card(
+                    title: 'Arcade Vehicle Simulation',
+                    images: [asset('projects/soon.jpg')],
+                    tags: 'BUas,Unreal Engine,C++',
+                    description: 'An arcade vehicle simulation project.',
+                    route: '#',
+                    links: [],
+                    width: '1'
+                ) }}
+                {{ card.card(
+                    title: 'Break-a-Bot',
+                    images: [asset('projects/breakabot/thumbnail.jpg')],
+                    tags: 'BUas,Lead Programmer,Unreal Engine,C++,Visual Scripting',
+                    description: 'Defend your spaceship in Break-a-Bot, a vibrant roguelike where you battle cyborg raiders and customize your playstyle by scavenging enemy parts. Swap body parts in fast-paced combat to adapt and survive. Protect your home and become the galaxy’s most fearsome little robot!',
+                    route: '#',
+                    links: [
+                        { url: 'https://store.steampowered.com/app/3365860/BreakaBot/', icon: 'fa6-brands:steam' },
+                    ],
+                    width: '1'
+                ) }}
+                {{ card.card(
                     title: 'Snopuck',
                     images: [asset('projects/snopuck/thumbnail_02_387x290.png')],
-                    tags: 'Lead Programmer,Multidisciplinary,Unreal Engine,Visual Scripting,Student',
+                    tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
                     description: 'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
                     route: '#',
                     links: [
@@ -29,7 +49,7 @@
                 {{ card.card(
                     title: 'Procedural Planets',
                     images: [asset('projects/planets/thumbnail_03_387x290.png')],
-                    tags: 'C++,Solo,Student',
+                    tags: 'BUas,Solo,C++',
                     description: 'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
                     route: '#',
                     links: [
@@ -43,7 +63,7 @@
                         asset('projects/marisol/puzzle_tower.png'),
                         asset('projects/marisol/crabosaurus.webp'),
                     ],
-                    tags: 'Lead Programmer,Multidisciplinary,Unreal Engine,Visual Scripting,Student',
+                    tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
                     description: 'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
                     route: '#',
                     links: [
@@ -69,12 +89,10 @@
                         images: [
                             asset('projects/hex_gamejam/thumbnail_02_387x290.png'),
                         ],
-                        tags: 'Solo,XS,wren.io,Student',
-                        description: 'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
+                        tags: 'BUas,Solo,XS,wren.io',
+                        description: 'A short masterclass on hexagon math with a 2 hour gamejam to create a small game using hexagons. This project is inspired by Pan\'orama.',
                         route: '#',
-                        links: [
-                            { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io' },
-                        ],
+                        links: [],
                         width: '2'
                     ) }}
                 </div>
@@ -94,11 +112,11 @@
                         images: [
                             asset('projects/super_superheat/superheat_512x288.png'),
                         ],
-                        tags: 'Mod,Melvor Idle,Solo,Javascript',
-                        description: 'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
+                        tags: 'Solo,Melvor Idle,Javascript',
+                        description: 'Melvor Idle is an idle game based on Runescape. I created a mod that removes the smithing requirement for the superheat spells in the Alt Magic skill.',
                         route: '#',
                         links: [
-                            { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io' },
+                            { url: 'https://mod.io/g/melvoridle/m/supersuperheat', icon: 'fa6-solid:gear' },
                         ],
                         width: '2'
                     ) }}
@@ -116,22 +134,22 @@
                 {{ card.card(
                     title: 'EPC 2023',
                     images: [asset('projects/epc2023/epc.png')],
-                    tags: 'Comission,Solo,Website,Custom',
-                    description: 'Comissioned website build for the Everything Procedural Conference 2023',
+                    tags: 'Commission,Solo,Symfony,PHP',
+                    description: 'Comissioned website build for the Everything Procedural Conference 2023.',
                     route: '#',
                     links: [
-                        { url: 'https://github.com/ArchBacon/Archive-Procedural-Planets', icon: 'lucide:github' },
+                        { url: 'https://github.com/ArchBacon/EverythingProcedural', icon: 'lucide:github' },
                     ],
                     width: '1'
                 ) }}
                 {{ card.card(
                     title: 'Portfolio',
                     images: [asset('projects/portfolio/portfolio_02.png')],
-                    tags: 'Solo,Website,Custom',
+                    tags: 'Solo,Symfony,PHP',
                     description: 'The portfolio website you\'re currently looking at.',
                     route: '#',
                     links: [
-                        { url: 'https://scriptyshake.itch.io/snopuck-team-butterfly-2223-y1d', icon: 'fa6-brands:itch-io' },
+                        { url: 'https://github.com/ArchBacon/Portfolio', icon: 'lucide:github' },
                     ],
                     width: '1'
                 ) }}

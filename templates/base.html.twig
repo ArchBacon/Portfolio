@@ -4,16 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+        <meta content="#fffbeb" name="theme-color">
+        <meta name="keywords" content="Portfolio, Programmer, GameDev">
+        <title>Its Chris</title>
+        <meta name="description" content="I'm a Gameplay Programmer!"/>
+        <meta name="author" content="Christian Delicaat"/>
+        <meta name="copyright" content="Christian Delicaat"/>
+        <meta name="robots" content="index"/>
+        <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96"/>
+        <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}"/>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}"/>
+        <meta name="apple-mobile-web-app-title" content="ItsChris" />
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}"/>
 
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="bg-amber-50 font-rajdhani bg-size-[auto_400px]" style="background-image: url('{{ asset('background.webp') }}')">
+    <body class="bg-amber-50 font-rajdhani bg-size-[auto_400px]" style="background-image: url('{{ asset('images/background.webp') }}')">
         <div class="px-4 md:px-12 max-w-5xl mx-auto flex flex-col gap-y-4">
             {% include 'header.html.twig' %}
             {% block body %}{% endblock %}
