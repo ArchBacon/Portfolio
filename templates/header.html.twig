@@ -1,0 +1,88 @@
+{% import _self as menu %}
+
+<div data-controller="menu">
+    {# Desktop: left section nav #}
+    <nav class="hidden xl:flex flex-col gap-1 fixed right-[calc(50%+29rem+1rem)] top-1/3 -translate-y-1/2 z-20 border-2 border-zinc-900 shadow-flat bg-amber-25 p-3">
+        <span class="uppercase font-bold text-xl tracking-tight text-zinc-900 text-center whitespace-nowrap pb-3 mb-2 border-b border-stone-300">Its Chris</span>
+        {{ menu.link('About', '#about') }}
+        {{ menu.link('Student Projects', '#student-projects') }}
+        {{ menu.link('Game Jams', '#game-jams') }}
+        {{ menu.link('Mods', '#mods') }}
+        {{ menu.link('Web Projects', '#web-projects') }}
+        <div class="flex items-center justify-center gap-4 pt-3 mt-2 border-t border-stone-300">
+            <a href="{{ asset('files/CV_Christian_Delicaat_20260815.pdf') }}" download
+               class="text-zinc-700 hover:text-amber-700 transition-colors" title="Download Resume">
+                {{ ux_icon('lucide:download', {class: 'w-5 h-5'}) }}
+            </a>
+            <a href="https://www.linkedin.com/in/christiandelicaat/" target="_blank"
+               class="text-zinc-700 hover:text-amber-700 transition-colors" title="LinkedIn">
+                {{ ux_icon('lucide:linkedin', {class: 'w-5 h-5'}) }}
+            </a>
+            <a href="https://github.com/ArchBacon" target="_blank"
+               class="text-zinc-700 hover:text-amber-700 transition-colors" title="GitHub">
+                {{ ux_icon('lucide:github', {class: 'w-5 h-5'}) }}
+            </a>
+        </div>
+    </nav>
+
+    {# Mobile: top bar #}
+    <div class="xl:hidden fixed top-0 inset-x-0 z-30 mx-auto max-w-5xl px-4 md:px-12">
+        <nav class="flex items-center justify-between py-4 px-4 bg-amber-50 border-2 border-t-0 border-zinc-900 shadow-flat">
+            <span class="flex-1"></span>
+            <span class="uppercase font-bold text-xl tracking-tight text-zinc-900">Its Chris</span>
+            <span class="flex-1 flex justify-end">
+                <button type="button" data-action="click->menu#open"
+                        class="flex items-center justify-center w-9 h-9 border-2 border-zinc-900 bg-amber-100 shadow-flat">
+                    {{ ux_icon('lucide:menu', {class: 'w-5 h-5 text-zinc-900'}) }}
+                </button>
+            </span>
+        </nav>
+    </div>
+    <div class="h-16 xl:hidden"></div>
+
+    {# Mobile: overlay #}
+    <div data-menu-target="overlay" data-action="click->menu#close"
+         class="xl:hidden fixed inset-0 z-30 bg-zinc-900 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    {# Mobile: slide-in panel #}
+    <aside data-menu-target="menu"
+           class="xl:hidden fixed top-0 right-0 z-40 h-full w-4/5 max-w-xs bg-amber-25 border-l-2 border-zinc-900 shadow-flat translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+        <div class="flex justify-between items-center mb-8">
+            <span class="uppercase font-bold text-xl tracking-tight text-zinc-900">Its Chris</span>
+            <button type="button" data-action="click->menu#close"
+                    class="flex items-center justify-center w-9 h-9 border-2 border-zinc-900 bg-amber-100 shadow-flat">
+                {{ ux_icon('lucide:x', {class: 'w-5 h-5 text-zinc-900'}) }}
+            </button>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            {{ menu.link('About', '#about') }}
+            {{ menu.link('Student Projects', '#student-projects') }}
+            {{ menu.link('Game Jams', '#game-jams') }}
+            {{ menu.link('Mods', '#mods') }}
+            {{ menu.link('Web Projects', '#web-projects') }}
+        </div>
+
+        <div class="mt-auto flex items-center justify-center gap-6 pt-6 border-t border-stone-300">
+            <a href="{{ asset('files/CV_Christian_Delicaat_20260815.pdf') }}" download
+               class="text-zinc-700 hover:text-amber-700 transition-colors" title="Download Resume">
+                {{ ux_icon('lucide:download', {class: 'w-6 h-6'}) }}
+            </a>
+            <a href="https://www.linkedin.com/in/christiandelicaat/" target="_blank"
+               class="text-zinc-700 hover:text-amber-700 transition-colors" title="LinkedIn">
+                {{ ux_icon('lucide:linkedin', {class: 'w-6 h-6'}) }}
+            </a>
+            <a href="https://github.com/ArchBacon" target="_blank"
+               class="text-zinc-700 hover:text-amber-700 transition-colors" title="GitHub">
+                {{ ux_icon('lucide:github', {class: 'w-6 h-6'}) }}
+            </a>
+        </div>
+    </aside>
+</div>
+
+{% macro link(name, route) %}
+    <a href="{{ route }}" data-action="click->menu#close"
+       class="px-2 py-1.5 -mx-2 uppercase font-semibold text-base tracking-wide whitespace-nowrap text-zinc-700 hover:bg-amber-100 hover:text-amber-700 transition-colors">
+        {{ name }}
+    </a>
+{% endmacro %}

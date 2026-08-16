@@ -4,11 +4,11 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 pt-1 xl:pt-0">
         {% include 'home/aboutme.html.twig' %}
 
         {# Student Projects #}
-        <section class="flex flex-col gap-4">
+        <section id="student-projects" class="flex flex-col gap-4 scroll-mt-20">
             <div
                 class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
                 Student Projects
@@ -56,7 +56,7 @@
 
         <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
         {# Game Jams #}
-            <section class="flex flex-col gap-4">
+            <section id="game-jams" class="flex flex-col gap-4 scroll-mt-20">
                 <div
                     class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
                     Game Jams
@@ -81,7 +81,7 @@
             </section>
 
             {# Mods #}
-            <section class="flex flex-col gap-4">
+            <section id="mods" class="flex flex-col gap-4 scroll-mt-20">
                 <div
                     class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
                     Mods
@@ -106,7 +106,7 @@
             </section>
         </div>
 
-        <section class="flex flex-col gap-4">
+        <section id="web-projects" class="flex flex-col gap-4 scroll-mt-20">
             <div
                 class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
                 Web Projects

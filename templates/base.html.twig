@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,8 +13,11 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="container px-4 md:px-12 max-w-5xl mx-auto bg-amber-50 pt-4 font-rajdhani bg-size-[auto_400px]" style="background-image: url('{{ asset('background.webp') }}')">
-        {% block body %}{% endblock %}
-        {% include 'footer.html.twig' %}
+    <body class="bg-amber-50 font-rajdhani bg-size-[auto_400px]" style="background-image: url('{{ asset('background.webp') }}')">
+        <div class="px-4 md:px-12 max-w-5xl mx-auto flex flex-col gap-y-4">
+            {% include 'header.html.twig' %}
+            {% block body %}{% endblock %}
+            {% include 'footer.html.twig' %}
+        </div>
     </body>
 </html>
