@@ -1,0 +1,58 @@
+<section class="flex flex-col min-h-90 border-2 border-zinc-900 shadow-flat bg-amber-25">
+    {# header #}
+    <div class="flex items-center text-zinc-700 justify-between gap-3 px-3.5 py-2.5 w-full border-b border-stone-300 uppercase font-bold text-md">
+        About me
+    </div>
+    {# body #}
+    <div class="p-6 h-full text-lg flex flex-col-reverse md:flex-row gap-x-12 gap-y-4">
+
+        <div class="md:flex-1 min-w-0">
+            <div class="flex flex-col flex-1 gap-4">
+                <p>
+                    Hallo! My name is Chris, a <span class="font-bold">gameplay & tools programming</span> graduate based in the Netherlands.
+                </p>
+                <p>
+                    Formerly a <span class="font-bold">web developer</span>, I'm now chasing my passion for games and game development.
+                </p>
+                <p>
+                    I am in my third year at Breda University of Applied Sciences and <span class="text-tertiary">currently looking for an internship</span>
+                    starting September 2025.
+                </p>
+            </div>
+
+            <div class="hidden md:flex flex-row items-center gap-3 mt-12">
+                <a href="{{ asset('files/CV_Christian_Delicaat_20260815.pdf') }}" download
+                   class="border-2 border-zinc-900 bg-amber-100 shadow-flat uppercase font-bold text-lg w-max text-center min-h-14 py-3 px-14 self-center transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                    Download Resume
+                </a>
+                <a href="https://www.linkedin.com/in/christiandelicaat/" target="_blank"
+                   class="flex items-center border-2 border-zinc-900 bg-amber-100 shadow-flat w-max h-14 py-3 px-3 aspect-square transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                    {{ ux_icon('lucide:github', {class: 'w-5 h-5 mx-auto'}) }}
+                </a>
+                <a href="https://github.com/ArchBacon" target="_blank"
+                   class="flex items-center border-2 border-zinc-900 bg-amber-100 shadow-flat w-max h-14 py-3 px-3 aspect-square transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                    {{ ux_icon('lucide:linkedin', {class: 'w-5 h-5 mx-auto'}) }}
+                </a>
+            </div>
+        </div>
+
+        <div class="md:hidden flex flex-row items-center gap-3 my-4">
+            <a href="https://github.com/ArchBacon" target="_blank"
+               class="flex items-center border-2 border-zinc-900 bg-amber-100 shadow-flat w-max h-14 py-3 px-3 aspect-square transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                {{ ux_icon('lucide:linkedin', {class: 'w-5 h-5 mx-auto'}) }}
+            </a>
+            <a href="{{ asset('files/CV_Christian_Delicaat_20260815.pdf') }}" download
+               class="border-2 border-zinc-900 bg-amber-100 shadow-flat uppercase font-bold text-lg flex-1 text-center min-h-14 py-3 self-center transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                Download Resume
+            </a>
+            <a href="https://www.linkedin.com/in/christiandelicaat/" target="_blank"
+               class="flex items-center border-2 border-zinc-900 bg-amber-100 shadow-flat w-max h-14 py-3 px-3 aspect-square transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                {{ ux_icon('lucide:github', {class: 'w-5 h-5 mx-auto'}) }}
+            </a>
+        </div>
+
+        <div class="md:flex-1 flex justify-center">
+            <img class="h-82 object-cover border-2 border-zinc-900 shadow-flat" src="{{ asset('portrait.webp') }}" alt="portrait">
+        </div>
+    </div>
+</section>

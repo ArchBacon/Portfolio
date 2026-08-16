@@ -1,0 +1,54 @@
+{% macro card(
+    title = "placeholder title",
+    images,
+    tags,
+    description = "placeholder description",
+    route = 'javascript:void(0)',
+    links = [],
+    width = '1'
+    ) %}
+<div class="col-span-2 {% if width == '1' %}md:col-span-1{% endif %} flex flex-col min-h-90 border-2 border-zinc-900 shadow-flat bg-amber-25">
+    {# header #}
+    <div
+        class="flex items-center text-zinc-700 justify-between gap-3 px-3.5 py-2.5 w-full border-b border-stone-300 uppercase font-semibold text-md">
+        <span class="text-zinc-700">{{ title }}</span>
+    </div>
+
+    {# body #}
+    <div class="p-6 h-full text-lg flex flex-col gap-4">
+
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            {% for image in images %}
+            <img class="h-64 min-w-0 flex-1 object-cover border-2 border-zinc-900 shadow-flat {% if not loop.first %}hidden md:flex{% endif %}"
+                 src="{{ image }}" alt="portrait">
+            {% endfor %}
+        </div>
+
+        {% set tags = tags|split(',') %}
+        {% if tags[0] != '' %}
+            <div class="flex flex-row flex-wrap my-4 gap-2 text-xs">
+                {% for tag in tags %}
+                    <span class="bg-amber-100 text-amber-700 px-2.5 py-0.5 rounded border text-nowrap">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="min-w-0">
+            <p>{{ description }}</p>
+        </div>
+    </div>
+
+    {# footer #}
+    <div class="flex items-center justify-between gap-3 px-3.5 py-2.5 w-full border-t border-stone-300 text-md">
+        <div>
+            {% for link in links %}
+            <a href="{{ link.url }}" target="{{ link.target|default('_blank') }}" class="text-zinc-700">
+                {{ ux_icon(link.icon, {class: "w-5 h-5 mx-auto"}) }}
+            </a>
+            {% endfor %}
+        </div>
+        <a href="{{ route }}" class="flex flex-row uppercase font-semibold text-amber-700">
+            Read more{{ ux_icon('lucide:arrow-up-right', {class: 'w-5 h-5 mx-auto'}) }}</a>
+    </div>
+</div>
+{% endmacro %}
