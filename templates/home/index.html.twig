@@ -5,6 +5,12 @@
 
 {% block body %}
     <div class="flex flex-col gap-4 pt-1 xl:pt-0">
+        {# Notification #}
+        <div class="flex items-center gap-3 border-2 border-zinc-900 shadow-flat bg-amber-100 text-zinc-700 font-semibold px-3.5 py-2.5">
+            {{ ux_icon('lucide:megaphone', {class: 'w-5 h-5 shrink-0'}) }}
+            <span>More projects and project details will be added over time. Interested in knowing more about a project, send me a message!</span>
+        </div>
+
         {% include 'home/aboutme.html.twig' %}
 
         {# Student Projects #}
@@ -18,7 +24,7 @@
                 {{ card.card(
                     title: 'Arcade Vehicle Simulation',
                     images: [asset('projects/soon.jpg')],
-                    tags: 'BUas,Unreal Engine,C++',
+                    tags: 'BUas,Solo,Unreal Engine,C++',
                     description: 'An arcade vehicle simulation project.',
                     route: '#',
                     links: [],
@@ -28,7 +34,7 @@
                     title: 'Break-a-Bot',
                     images: [asset('projects/breakabot/thumbnail.jpg')],
                     tags: 'BUas,Lead Programmer,Unreal Engine,C++,Visual Scripting',
-                    description: 'Defend your spaceship in Break-a-Bot, a vibrant roguelike where you battle cyborg raiders and customize your playstyle by scavenging enemy parts. Swap body parts in fast-paced combat to adapt and survive. Protect your home and become the galaxy’s most fearsome little robot!',
+                    description: 'Defend your spaceship in Break-a-Bot, a vibrant roguelike where you battle cyborg raiders and customize your playstyle by scavenging enemy parts. Swap body parts in fast-paced combat to adapt and survive.',
                     route: '#',
                     links: [
                         { url: 'https://store.steampowered.com/app/3365860/BreakaBot/', icon: 'fa6-brands:steam' },
@@ -39,7 +45,7 @@
                     title: 'Snopuck',
                     images: [asset('projects/snopuck/thumbnail_02_387x290.png')],
                     tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
-                    description: 'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as cute penguins!',
+                    description: 'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as penguins!',
                     route: '#',
                     links: [
                         { url: 'https://scriptyshake.itch.io/snopuck-team-butterfly-2223-y1d', icon: 'fa6-brands:itch-io' },
@@ -50,7 +56,7 @@
                     title: 'Procedural Planets',
                     images: [asset('projects/planets/thumbnail_03_387x290.png')],
                     tags: 'BUas,Solo,C++',
-                    description: 'A procedural planet generation tool. Planets are generated in runtime on the CPU.',
+                    description: 'A procedural planet generation tool.',
                     route: '#',
                     links: [
                         { url: 'https://github.com/ArchBacon/Archive-Procedural-Planets', icon: 'lucide:github' },
