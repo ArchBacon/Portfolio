@@ -1,17 +1,59 @@
 {% extends 'base.html.twig' %}
-{% import 'widgets/card.html.twig' as card %}
-
-{% block title %}Hello HomeController!{% endblock %}
+{% import 'widgets/card.html.twig' as widget %}
 
 {% block body %}
     <div class="flex flex-col gap-4 pt-1 xl:pt-0">
         {# Notification #}
-        <div class="flex items-center gap-3 border-2 border-zinc-900 shadow-flat bg-amber-100 text-zinc-700 font-semibold px-3.5 py-2.5">
-            {{ ux_icon('lucide:megaphone', {class: 'w-5 h-5 shrink-0'}) }}
-            <span>More projects and project details will be added over time. Interested in knowing more about a project? send me a message!</span>
-        </div>
+{#        <div class="flex items-center gap-3 border-2 border-zinc-900 shadow-flat bg-indigo-100 text-zinc-700 font-semibold px-3.5 py-2.5">#}
+{#            {{ ux_icon('lucide:megaphone', {class: 'w-5 h-5 shrink-0'}) }}#}
+{#            <span>More projects and project details will be added over time. Interested in knowing more about a project? send me a message!</span>#}
+{#        </div>#}
 
         {% include 'home/aboutme.html.twig' %}
+
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
+            {# Professional Projects #}
+            <section id="professional" class="flex flex-col gap-4 scroll-mt-20">
+                <div
+                    class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
+                    Professional Projects
+                </div>
+
+                <div class="grid grid-cols-2 auto-rows-fr flex-1 md:gap-x-4 gap-y-4">
+                    {{ widget.card(
+                        title: 'Unannounced Project',
+                        images: [
+                            asset('projects/soon.jpg'),
+                        ],
+                        tags: 'Verdant Games,Intern,Unreal Engine,C++,Visual Scripting',
+                        route: '#',
+                        links: [],
+                        width: '2'
+                    ) }}
+                </div>
+            </section>
+
+            {# Game Jams #}
+            <section id="game-jams" class="flex flex-col gap-4 scroll-mt-20">
+                <div
+                    class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
+                    Game Jams
+                </div>
+
+                <div class="grid grid-cols-2 auto-rows-fr flex-1 md:gap-x-4 gap-y-4">
+                    {{ widget.card(
+                        title: 'Hex Game Jam',
+                        images: [
+                            asset('projects/hex_gamejam/thumbnail_02_387x290.png'),
+                        ],
+                        tags: 'BUas,Solo,XS,wren.io',
+                        route: '#',
+                        links: [],
+                        width: '2'
+                    ) }}
+                </div>
+            </section>
+        </div>
 
         {# Student Projects #}
         <section id="student-projects" class="flex flex-col gap-4 scroll-mt-20">
@@ -21,114 +63,127 @@
             </div>
 
             <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
-                {{ card.card(
-                    title: 'Arcade Vehicle Simulation',
-                    images: [asset('projects/soon.jpg')],
+                {{ widget.card(
+                    title: 'Vehicle Simulation',
+                    images: [asset('projects/sierra/thumbnail.webp')],
                     tags: 'BUas,Solo,Unreal Engine,C++',
-                    description: 'An arcade vehicle simulation project.',
                     route: '#',
                     links: [],
                     width: '1'
                 ) }}
-                {{ card.card(
+                {{ widget.card(
+                    title: 'Procedural Planets',
+                    images: [asset('projects/planets/thumbnail_03_387x290.png')],
+                    tags: 'BUas,Solo,C++,Procedural generation',
+                    route: '#',
+                    links: [
+                        { url: 'https://github.com/ArchBacon/Archive-Procedural-Planets', icon: 'lucide:github', title: 'GitHub' },
+                    ],
+                    width: '1'
+                ) }}
+                {{ widget.card(
                     title: 'Break-a-Bot',
                     images: [asset('projects/breakabot/thumbnail.jpg')],
                     tags: 'BUas,Lead Programmer,Unreal Engine,C++,Visual Scripting',
-                    description: 'Defend your spaceship in Break-a-Bot, a vibrant roguelike where you battle cyborg raiders and customize your playstyle by scavenging enemy parts. Swap body parts in fast-paced combat to adapt and survive.',
                     route: '#',
                     links: [
-                        { url: 'https://store.steampowered.com/app/3365860/BreakaBot/', icon: 'fa6-brands:steam' },
+                        { url: 'https://store.steampowered.com/app/3365860/BreakaBot/', icon: 'fa6-brands:steam', title: 'Steam' },
                     ],
                     width: '1'
                 ) }}
-                {{ card.card(
+                {{ widget.card(
                     title: 'Snopuck',
                     images: [asset('projects/snopuck/thumbnail_02_387x290.png')],
                     tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
-                    description: 'A casual couch-coop game with 4 players competing in an icy, chaotic and hockey-themed arena as penguins!',
                     route: '#',
                     links: [
-                        { url: 'https://scriptyshake.itch.io/snopuck-team-butterfly-2223-y1d', icon: 'fa6-brands:itch-io' },
+                        { url: 'https://scriptyshake.itch.io/snopuck-team-butterfly-2223-y1d', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
                     ],
                     width: '1'
                 ) }}
-                {{ card.card(
-                    title: 'Procedural Planets',
-                    images: [asset('projects/planets/thumbnail_03_387x290.png')],
-                    tags: 'BUas,Solo,C++',
-                    description: 'A procedural planet generation tool.',
-                    route: '#',
-                    links: [
-                        { url: 'https://github.com/ArchBacon/Archive-Procedural-Planets', icon: 'lucide:github' },
-                    ],
-                    width: '1'
-                ) }}
-                {{ card.card(
+                {{ widget.card(
                     title: 'Marisol',
                     images: [
                         asset('projects/marisol/puzzle_tower.png'),
                         asset('projects/marisol/crabosaurus.webp'),
                     ],
-                    tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
-                    description: 'Dive into the world of Marisol and retrieve the magical crystal to save the local people. During your adventure, enemies will try to hold you back, and there will be puzzles that require solving.',
+                    tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting,Procedural Animation',
                     route: '#',
                     links: [
-                        { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io' },
+                        { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
                     ],
                     width: '2'
                 ) }}
             </div>
         </section>
 
-        <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
-        {# Game Jams #}
-            <section id="game-jams" class="flex flex-col gap-4 scroll-mt-20">
-                <div
-                    class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
-                    Game Jams
-                </div>
+        {# Personal Projects #}
+        <section id="personal-projects" class="flex flex-col gap-4 scroll-mt-20">
+            <div
+                class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
+                Personal Projects
+            </div>
 
-                <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
+            <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
+                {{ widget.card(
+                    title: 'Harrow\'s End',
+                    images: [
+                        asset('projects/soon.jpg'),
+                    ],
+                    tags: 'Unreal Engine,C++,Procedural Generation',
+                    route: '#',
+                    links: [],
+                    width: '1'
+                ) }}
+                {{ widget.card(
+                    title: 'Unannounced Project',
+                    images: [
+                        asset('projects/soon.jpg'),
+                    ],
+                    tags: 'Solo,Unreal Engine,C++',
+                    route: '#',
+                    links: [],
+                    width: '1'
+                ) }}
+            </div>
+        </section>
 
-                    {{ card.card(
-                        title: 'Hex Game Jam',
-                        images: [
-                            asset('projects/hex_gamejam/thumbnail_02_387x290.png'),
-                        ],
-                        tags: 'BUas,Solo,XS,wren.io',
-                        description: 'A short masterclass on hexagon math with a 2 hour gamejam to create a small game using hexagons. This project is inspired by Pan\'orama.',
-                        route: '#',
-                        links: [],
-                        width: '2'
-                    ) }}
-                </div>
-            </section>
+        {# Mods #}
+        <section id="mods" class="flex flex-col gap-4 scroll-mt-20">
+            <div
+                class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
+                Mods
+            </div>
 
-            {# Mods #}
-            <section id="mods" class="flex flex-col gap-4 scroll-mt-20">
-                <div
-                    class="col-span-1 flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 text-zinc-700 font-semibold text-xl px-3.5 py-2.5 uppercase">
-                    Mods
-                </div>
-
-                <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
-
-                    {{ card.card(
-                        title: 'Melvor idle / Super superheat',
-                        images: [
-                            asset('projects/super_superheat/superheat_512x288.png'),
-                        ],
-                        tags: 'Solo,Melvor Idle,Javascript',
-                        description: 'Melvor Idle is an idle game based on Runescape. I created a mod that removes the smithing requirement for the superheat spells in the Alt Magic skill.',
-                        route: '#',
-                        links: [
-                            { url: 'https://mod.io/g/melvoridle/m/supersuperheat', icon: 'fa6-solid:gear' },
-                        ],
-                        width: '2'
-                    ) }}
-                </div>
-            </section>
-        </div>
+            <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
+                {{ widget.card(
+                    title: 'Melvor idle / Super superheat',
+                    images: [
+                        asset('projects/super_superheat/superheat_512x288.png'),
+                    ],
+                    tags: 'Solo,Melvor Idle,Javascript',
+                    route: '#',
+                    links: [
+                        { url: 'https://mod.io/g/melvoridle/m/supersuperheat', icon: 'fa6-solid:gear', title: 'Mod.io' },
+                        { url: 'https://github.com/ArchBacon/SuperSuperheat', icon: 'lucide:github', title: 'GitHub' },
+                    ],
+                    width: '1'
+                ) }}
+                {{ widget.card(
+                    title: 'Melvor idle / Abyssal Nightfall',
+                    images: [
+                        asset('projects/super_superheat/abyssal_nightfall.png'),
+                    ],
+                    tags: 'Solo,Melvor Idle,Javascript',
+                    route: '#',
+                    links: [
+                        { url: 'https://mod.io/g/melvoridle/m/abyssal-nightfall', icon: 'fa6-solid:gear', title: 'Mod.io' },
+                        { url: 'https://github.com/ArchBacon/AbyssalNightfall', icon: 'lucide:github', title: 'GitHub' },
+                    ],
+                    width: '1'
+                ) }}
+            </div>
+        </section>
 
         <section id="web-projects" class="flex flex-col gap-4 scroll-mt-20">
             <div
@@ -137,25 +192,23 @@
             </div>
 
             <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
-                {{ card.card(
+                {{ widget.card(
                     title: 'EPC 2023',
                     images: [asset('projects/epc2023/epc.png')],
                     tags: 'Commission,Solo,Symfony,PHP',
-                    description: 'Comissioned website build for the Everything Procedural Conference 2023.',
                     route: '#',
                     links: [
-                        { url: 'https://github.com/ArchBacon/EverythingProcedural', icon: 'lucide:github' },
+                        { url: 'https://github.com/ArchBacon/EverythingProcedural', icon: 'lucide:github', title: 'GitHub' },
                     ],
                     width: '1'
                 ) }}
-                {{ card.card(
+                {{ widget.card(
                     title: 'Portfolio',
                     images: [asset('projects/portfolio/portfolio_02.png')],
                     tags: 'Solo,Symfony,PHP',
-                    description: 'The portfolio website you\'re currently looking at.',
                     route: '#',
                     links: [
-                        { url: 'https://github.com/ArchBacon/Portfolio', icon: 'lucide:github' },
+                        { url: 'https://github.com/ArchBacon/Portfolio', icon: 'lucide:github', title: 'GitHub' },
                     ],
                     width: '1'
                 ) }}
