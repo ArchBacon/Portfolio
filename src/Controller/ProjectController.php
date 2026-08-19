@@ -19,4 +19,10 @@ final class ProjectController extends AbstractController
     {
         return $this->render('project/hexgamejam.html.twig');
     }
+
+    #[Route('/planets', name: 'app_project_planets')]
+    public function planets(): Response
+    {
+        return $this->render('project/planets.html.twig');
+    }
 }

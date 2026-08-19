@@ -80,7 +80,8 @@
                     links: [
                         { url: 'https://github.com/ArchBacon/Archive-Procedural-Planets', icon: 'lucide:github', title: 'GitHub' },
                     ],
-                    width: '1'
+                    width: '1',
+                    route: path('app_project_planets')
                 ) }}
                 {{ widget.card(
                     title: 'Break-a-Bot',
@@ -93,6 +94,28 @@
                     width: '1'
                 ) }}
                 {{ widget.card(
+                    title: 'Custom Voxel Engine',
+                    images: [
+                        asset('projects/soon.webp'),
+                    ],
+                    tags: 'BUas,C++,Custom Engine,Procedural Generation',
+                    route: '#',
+                    links: [],
+                    width: '1',
+                ) }}
+                {{ widget.card(
+                    title: 'Marisol',
+                    images: [
+                        asset('projects/marisol/thumbnail_02.webp'),
+                    ],
+                    tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting,Procedural Animation',
+                    route: '#',
+                    links: [
+                        { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
+                    ],
+                    width: '1',
+                ) }}
+                {{ widget.card(
                     title: 'Snopuck',
                     images: [asset('projects/snopuck/thumbnail.webp')],
                     tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
@@ -101,19 +124,6 @@
                         { url: 'https://scriptyshake.itch.io/snopuck-team-butterfly-2223-y1d', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
                     ],
                     width: '1'
-                ) }}
-                {{ widget.card(
-                    title: 'Marisol',
-                    images: [
-                        asset('projects/marisol/thumbnail_01.webp'),
-                        asset('projects/marisol/thumbnail_02.webp'),
-                    ],
-                    tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting,Procedural Animation',
-                    route: '#',
-                    links: [
-                        { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
-                    ],
-                    width: '2',
                 ) }}
             </div>
         </section>

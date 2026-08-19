@@ -42,11 +42,13 @@
                 {{ ux_icon('lucide:arrow-left', {class: 'w-5 h-5 -translate-y-[2px] inline-block'}) }} Back home
             </a>
 
-            {% for link in links %}
-                <a href="{{ link.url }}" target="_blank" class="border-2 border-zinc-900 bg-amber-100 shadow-flat uppercase font-bold text-lg w-max min-h-14 p-3 transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
-                    {{ ux_icon(link.icon, {class: 'w-7 h-7 -translate-y-[2px] inline-block'}) }} {{ link.title }}
-                </a>
-            {% endfor %}
+            <div class="flex flex-col gap-4">
+                {% for link in links %}
+                    <a href="{{ link.url }}" target="_blank" class="border-2 border-zinc-900 bg-amber-100 shadow-flat uppercase font-bold text-lg text-center min-h-14 p-3 transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                        {{ ux_icon(link.icon, {class: 'w-7 h-7 -translate-y-[2px] inline-block'}) }} {{ link.title }}
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     </nav>
 
@@ -90,12 +92,14 @@
             {% endfor %}
         </div>
 
-        <div class="flex flex-col items-start gap-4 mt-4">
-            {% for link in links %}
-                <a href="{{ link.url }}" target="_blank" class="border-2 border-zinc-900 bg-amber-100 shadow-flat uppercase font-bold text-lg w-max min-h-14 p-3 transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
-                    {{ ux_icon(link.icon, {class: 'w-7 h-7 -translate-y-[2px] inline-block'}) }} {{ link.title }}
-                </a>
-            {% endfor %}
+        <div class="flex items-start mt-4">
+            <div class="flex flex-col gap-4">
+                {% for link in links %}
+                    <a href="{{ link.url }}" target="_blank" class="border-2 border-zinc-900 bg-amber-100 shadow-flat uppercase font-bold text-lg text-center min-h-14 p-3 transition-all duration-150 hover:translate-x-1.5 hover:translate-y-1.5 hover:shadow-none">
+                        {{ ux_icon(link.icon, {class: 'w-7 h-7 -translate-y-[2px] inline-block'}) }} {{ link.title }}
+                    </a>
+                {% endfor %}
+            </div>
         </div>
 
         <div class="mt-auto flex items-center justify-center gap-6 pt-6 border-t border-stone-300">

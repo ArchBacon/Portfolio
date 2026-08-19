@@ -6,16 +6,19 @@
         routes: [
             { name: 'About', anchor: '#about' },
         ],
-        links: [],
+        links: [
+            { url: 'https://archbacon.github.io/procedural-planets/', icon: 'lucide:newspaper', title: 'Article' },
+            { url: 'https://github.com/ArchBacon/Archive-Procedural-Planets', icon: 'lucide:github', title: 'GitHub' },
+        ],
     } %}
 
     <section id="home" class="relative flex flex-col max-h-94 aspect-33/10 border-2 border-zinc-900 shadow-flat bg-amber-25 scroll-mt-20">
-        <img class="h-full object-cover" src="{{ asset('projects/hex_gamejam/banner.webp') }}" alt="banner image">
+        <img class="h-full object-cover" src="{{ asset('projects/planets/banner.webp') }}" alt="banner image">
         <div class="absolute bg-black/50 w-full h-full"></div>
 {#        <img class="absolute m-auto left-0 right-0 top-0 bottom-0 max-h-48" src="{{ asset('projects/marisol/logo.webp') }}" alt="project logo">#}
         <div class="absolute flex items-center justify-center w-full h-full">
             <p class="text-7xl text-amber-50 font-bold text-center uppercase">
-                Hexagon Game Jam
+                Procedural Planets
             </p>
         </div>
     </section>
@@ -23,11 +26,11 @@
     <section id="about" class="flex flex-col border-2 border-zinc-900 shadow-flat bg-amber-25 scroll-mt-20">
         {# header #}
         <div class="flex items-center text-zinc-700 justify-between gap-3 px-3.5 py-2.5 w-full border-b border-stone-300 uppercase font-bold text-md">
-            About the game jam
+            About the project
         </div>
         {# body #}
         <div class="p-6 pt-0 h-full text-lg flex flex-col gap-x-12 gap-y-4">
-            {% set tags = 'BUas,Solo,XS,wren.io' %}
+            {% set tags = 'BUas,Solo,C++,Procedural generation' %}
             {% set tags = tags|split(',') %}
             {% if tags[0] != '' %}
                 <div class="flex flex-row flex-wrap mt-4 gap-2 justify-center">
@@ -49,13 +52,10 @@
                 </div>
             {% endif %}
             <p>
-                The game jam was a one-day event split between a <span class="font-bold">hexagon math masterclass</span> and a short <span class="font-bold">two-hour jam</span> that
-                followed it. I decided to create something similar to Pan'Orama or Dorf Romantic. You score points by
-                <span class="font-bold">placing tiles</span> of the same type next to each other, with the next tile being <span class="font-bold">random</span> but shown in advance. Every
-                x turns, a random patch of tiles is placed, and every y turns, some tiles are <span class="font-bold">destroyed</span>.
-            </p>
-            <p>
-                We were required to make use of the XS, a tiny game engine that used the wren.io scripting language, to create the game during the jam.
+                The project was developed over 8 weeks in a minimal <span class="font-bold">C++</span> framework. I explored <span class="font-bold">procedural content
+                    generation</span>, inspired by Stellaris, by generating stylized, <span class="font-bold">noise-driven</span> planets rendered on UV-spheres.
+                The focus was on generating terrain textures using <span class="font-bold">layered 3D noise</span> and experimenting with procedural
+                cloud techniques. The generation runs on a single thread on th CPU.
             </p>
         </div>
     </section>
