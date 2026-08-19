@@ -8,15 +8,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ProjectController extends AbstractController
 {
-    #[Route('/project', name: 'app_project')]
-    public function index(): Response
+    #[Route('/marisol', name: 'app_project_marisol')]
+    public function marisol(): Response
     {
-        return $this->render('project/demo.html.twig');
-    }
-
-    #[Route('/hex-game-jam', name: 'app_project_hex-game-jam')]
-    public function a(): Response
-    {
-        return $this->render('project/demo.html.twig');
+        return $this->render('project/marisol.html.twig');
     }
 }

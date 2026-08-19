@@ -1,7 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'project/base.html.twig' %}
 {% import 'project/contribution.html.twig' as widget %}
 
-{% block body %}
+{% block content %}
+    {% include 'project/header.html.twig' with {
+        routes: [
+            { name: 'About', anchor: '#about' },
+            { name: 'Contributions', anchor: '#contributions' },
+            { name: '— Leadership', anchor: '#leadership' },
+            { name: '— Gameplay', anchor: '#gameplay' },
+            { name: '— Procedural', anchor: '#procedural' },
+            { name: '— Optimization', anchor: '#optimization' },
+        ],
+        links: [
+            { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
+        ],
+    } %}
+
     <section id="home" class="relative flex flex-col h-94 border-2 border-zinc-900 shadow-flat bg-amber-25 scroll-mt-20">
         <img class="h-full object-cover" src="{{ asset('projects/marisol/uOeesA.png') }}" alt="portrait">
         <div class="absolute bg-black/50 w-full h-full"></div>
@@ -18,7 +32,7 @@
             {% set tags = 'BUas,Lead Programmer,Unreal Engine,Visual Scripting,Procedural Animation' %}
             {% set tags = tags|split(',') %}
             {% if tags[0] != '' %}
-                <div class="flex flex-row flex-wrap mt-4 gap-2 self-center">
+                <div class="flex flex-row flex-wrap mt-4 gap-2 justify-center">
                     {% for tag in tags %}
                         {% if tag|lower == 'lead programmer' %}
                             <span class="flex items-center gap-1 leading-none bg-amber-700 text-amber-25 px-2.5 py-1 rounded border border-amber-700 uppercase font-bold tracking-wide text-[11px] text-nowrap">
@@ -36,7 +50,7 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            <p class="text-center px-6">
+            <p>
                 Dive into the world of Marisol to retrieve the magical crystal and save the local people. Along the way, you'll face <span class="font-bold">enemies</span> determined to hold you back and <span class="font-bold">puzzles</span> that must be solved to progress.
             </p>
             <div class="flex items-center gap-3 border-2 border-zinc-900 shadow-flat bg-indigo-100 text-zinc-700 font-semibold px-3.5 py-2.5">
@@ -76,7 +90,7 @@
 
             {{ widget.contribution(
                 title: 'Procedural Animation',
-                anchor: 'procedural-animation',
+                anchor: 'procedural',
                 contributions: [
                     'It moves <span class="font-bold">fast</span>',
                     'so much work done!',
