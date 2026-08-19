@@ -23,7 +23,7 @@
                     {{ widget.card(
                         title: 'Unannounced Project',
                         images: [
-                            asset('projects/soon.jpg'),
+                            asset('projects/soon.webp'),
                         ],
                         tags: 'Verdant Games,Intern,Unreal Engine,C++,Visual Scripting',
                         route: '#',
@@ -44,12 +44,13 @@
                     {{ widget.card(
                         title: 'Hex Game Jam',
                         images: [
-                            asset('projects/hex_gamejam/thumbnail_02_387x290.png'),
+                            asset('projects/hex_gamejam/thumbnail.webp'),
                         ],
                         tags: 'BUas,Solo,XS,wren.io',
                         route: '#',
                         links: [],
                         width: '2',
+                        route: path('app_project_hexgamejam')
                     ) }}
                 </div>
             </section>
@@ -65,7 +66,7 @@
             <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
                 {{ widget.card(
                     title: 'Vehicle Simulation',
-                    images: [asset('projects/sierra/thumb.webp')],
+                    images: [asset('projects/sierra/thumbnail.webp')],
                     tags: 'BUas,Solo,Unreal Engine,C++',
                     route: '#',
                     links: [],
@@ -73,7 +74,7 @@
                 ) }}
                 {{ widget.card(
                     title: 'Procedural Planets',
-                    images: [asset('projects/planets/thumbnail_03_387x290.png')],
+                    images: [asset('projects/planets/thumbnail.webp')],
                     tags: 'BUas,Solo,C++,Procedural generation',
                     route: '#',
                     links: [
@@ -93,7 +94,7 @@
                 ) }}
                 {{ widget.card(
                     title: 'Snopuck',
-                    images: [asset('projects/snopuck/thumbnail_02_387x290.png')],
+                    images: [asset('projects/snopuck/thumbnail.webp')],
                     tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting',
                     route: '#',
                     links: [
@@ -104,8 +105,8 @@
                 {{ widget.card(
                     title: 'Marisol',
                     images: [
-                        asset('projects/marisol/puzzle_tower.png'),
-                        asset('projects/marisol/crabosaurus.webp'),
+                        asset('projects/marisol/thumbnail_01.webp'),
+                        asset('projects/marisol/thumbnail_02.webp'),
                     ],
                     tags: 'BUas,Lead Programmer,Unreal Engine,Visual Scripting,Procedural Animation',
                     route: '#',
@@ -113,7 +114,6 @@
                         { url: 'https://buas.itch.io/marisol', icon: 'fa6-brands:itch-io', title: 'Itch.io' },
                     ],
                     width: '2',
-                    route: path('app_project_marisol'),
                 ) }}
             </div>
         </section>
@@ -129,7 +129,7 @@
                 {{ widget.card(
                     title: 'Unannounced Project',
                     images: [
-                        asset('projects/soon.jpg'),
+                        asset('projects/soon.webp'),
                     ],
                     tags: 'Unreal Engine,C++,Procedural Generation',
                     route: '#',
@@ -139,7 +139,7 @@
                 {{ widget.card(
                     title: 'Unannounced Project',
                     images: [
-                        asset('projects/soon.jpg'),
+                        asset('projects/soon.webp'),
                     ],
                     tags: 'Solo,Unreal Engine,C++',
                     route: '#',
@@ -160,7 +160,7 @@
                 {{ widget.card(
                     title: 'Melvor idle / Super superheat',
                     images: [
-                        asset('projects/super_superheat/superheat_512x288.png'),
+                        asset('projects/melvor/superheat.webp'),
                     ],
                     tags: 'Solo,Melvor Idle,Javascript',
                     route: '#',
@@ -173,7 +173,7 @@
                 {{ widget.card(
                     title: 'Melvor idle / Abyssal Nightfall',
                     images: [
-                        asset('projects/super_superheat/abyssal_nightfall.png'),
+                        asset('projects/melvor/nightfall.webp'),
                     ],
                     tags: 'Solo,Melvor Idle,Javascript',
                     route: '#',
@@ -195,7 +195,7 @@
             <div class="grid grid-cols-2 md:gap-x-4 gap-y-4">
                 {{ widget.card(
                     title: 'EPC 2023',
-                    images: [asset('projects/epc2023/epc.png')],
+                    images: [asset('projects/epc2023/thumbnail.webp')],
                     tags: 'Commission,Solo,Symfony,PHP',
                     route: '#',
                     links: [
@@ -205,7 +205,7 @@
                 ) }}
                 {{ widget.card(
                     title: 'Portfolio',
-                    images: [asset('projects/portfolio/portfolio_02.png')],
+                    images: [asset('projects/portfolio/thumbnail.webp')],
                     tags: 'Solo,Symfony,PHP',
                     route: '#',
                     links: [

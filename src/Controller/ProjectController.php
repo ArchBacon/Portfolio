@@ -13,4 +13,10 @@ final class ProjectController extends AbstractController
     {
         return $this->render('project/marisol.html.twig');
     }
+
+    #[Route('/hex-gamejam', name: 'app_project_hexgamejam')]
+    public function hexgamejam(): Response
+    {
+        return $this->render('project/hexgamejam.html.twig');
+    }
 }
